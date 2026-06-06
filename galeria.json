@@ -58,5 +58,11 @@
     "titulo": "Kda Evelynn Lh",
     "tipo": "full-render",
     "nsfw": true
+  },
+  {
+    "archivo": "Mieruko.png",
+    "titulo": "Mieruko",
+    "tipo": "full-render",
+    "nsfw": false
   }
 ]
