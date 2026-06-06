@@ -214,5 +214,14 @@
       "background"
     ],
     "nsfw": true
+  },
+  {
+    "archivo": "Cowgirl Sue Flat.png",
+    "titulo": "Cowgirl Sue Flat",
+    "tags": [
+      "sketch",
+      "colored"
+    ],
+    "nsfw": false
   }
 ]
