@@ -7,181 +7,176 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Crimson+Pro:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --ink: #0d0b09; --paper: #f0ebe2; --red: #b01c1c; --red2: #7a1010;
-    --ash: #2a2520; --ash2: #3d3730; --dust: #6b6259; --mark: #c8b89a;
-    --mark2: #a89880; --scratch: #d4c9b8;
-  }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  ::selection { background:var(--red); color:var(--paper); }
-  body { background:var(--ink); color:var(--paper); font-family:'Space Mono',monospace; font-size:14px; line-height:1.7; overflow-x:hidden; cursor:crosshair; }
-  body.lang-locked { overflow:hidden; }
-  body::before { content:''; position:fixed; inset:0; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events:none; z-index:9999; mix-blend-mode:overlay; }
-  a { color:inherit; text-decoration:none; }
+  :root { --ink:#0d0b09;--paper:#f0ebe2;--red:#b01c1c;--red2:#7a1010;--ash:#2a2520;--ash2:#3d3730;--dust:#6b6259;--mark:#c8b89a;--mark2:#a89880;--scratch:#d4c9b8; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  ::selection{background:var(--red);color:var(--paper);}
+  body{background:var(--ink);color:var(--paper);font-family:'Space Mono',monospace;font-size:14px;line-height:1.7;overflow-x:hidden;cursor:crosshair;}
+  body.lang-locked{overflow:hidden;}
+  body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;mix-blend-mode:overlay;}
+  a{color:inherit;text-decoration:none;}
 
   /* GATE */
-  #lang-gate { position:fixed; inset:0; background:var(--ink); z-index:10000; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3rem; }
-  .gate-logo { font-family:'Bebas Neue',sans-serif; font-size:clamp(5rem,15vw,10rem); color:var(--paper); line-height:1; position:relative; }
-  .gate-logo::after { content:'SCRAP'; position:absolute; left:4px; top:4px; color:var(--red); z-index:-1; opacity:0.5; }
-  .gate-sub { font-family:'Crimson Pro',serif; font-style:italic; font-size:1rem; color:var(--dust); letter-spacing:0.2em; text-align:center; margin-top:-2rem; }
-  .gate-label { font-size:10px; letter-spacing:0.3em; color:var(--dust); text-transform:uppercase; text-align:center; }
-  .gate-buttons { display:flex; gap:1px; background:var(--ash2); }
-  .gate-btn { background:var(--ash); border:none; color:var(--mark); font-family:'Bebas Neue',sans-serif; font-size:2rem; letter-spacing:0.1em; padding:1.2rem 3rem; cursor:crosshair; transition:background 0.15s,color 0.15s; }
-  .gate-btn:hover { background:var(--red); color:var(--paper); }
-  .gate-btn-sub { display:block; font-family:'Space Mono',monospace; font-size:9px; letter-spacing:0.2em; color:var(--dust); margin-top:4px; text-transform:uppercase; }
-  .gate-btn:hover .gate-btn-sub { color:rgba(240,235,226,0.6); }
-  .gate-deco { position:absolute; border:1px solid var(--ash2); pointer-events:none; }
-  .gate-deco-1 { width:300px; height:300px; top:-80px; left:-80px; transform:rotate(20deg); opacity:0.2; }
-  .gate-deco-2 { width:200px; height:200px; bottom:-50px; right:-50px; transform:rotate(-15deg); opacity:0.15; }
+  #lang-gate{position:fixed;inset:0;background:var(--ink);z-index:10000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3rem;}
+  .gate-logo{font-family:'Bebas Neue',sans-serif;font-size:clamp(5rem,15vw,10rem);color:var(--paper);line-height:1;position:relative;}
+  .gate-logo::after{content:'SCRAP';position:absolute;left:4px;top:4px;color:var(--red);z-index:-1;opacity:0.5;}
+  .gate-sub{font-family:'Crimson Pro',serif;font-style:italic;font-size:1rem;color:var(--dust);letter-spacing:0.2em;text-align:center;margin-top:-2rem;}
+  .gate-label{font-size:10px;letter-spacing:0.3em;color:var(--dust);text-transform:uppercase;text-align:center;}
+  .gate-buttons{display:flex;gap:1px;background:var(--ash2);}
+  .gate-btn{background:var(--ash);border:none;color:var(--mark);font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:0.1em;padding:1.2rem 3rem;cursor:crosshair;transition:background 0.15s,color 0.15s;}
+  .gate-btn:hover{background:var(--red);color:var(--paper);}
+  .gate-btn-sub{display:block;font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.2em;color:var(--dust);margin-top:4px;text-transform:uppercase;}
+  .gate-btn:hover .gate-btn-sub{color:rgba(240,235,226,0.6);}
+  .gate-deco{position:absolute;border:1px solid var(--ash2);pointer-events:none;}
+  .gate-deco-1{width:300px;height:300px;top:-80px;left:-80px;transform:rotate(20deg);opacity:0.2;}
+  .gate-deco-2{width:200px;height:200px;bottom:-50px;right:-50px;transform:rotate(-15deg);opacity:0.15;}
 
   /* LANG */
-  .lang-switcher { position:fixed; top:12px; right:1.5rem; z-index:200; display:flex; gap:1px; background:var(--ash2); }
-  .lang-pill { background:var(--ash); border:none; color:var(--dust); font-family:'Space Mono',monospace; font-size:9px; letter-spacing:0.2em; padding:5px 10px; cursor:crosshair; transition:all 0.15s; text-transform:uppercase; }
-  .lang-pill.active { background:var(--red); color:var(--paper); }
+  .lang-switcher{position:fixed;top:12px;right:1.5rem;z-index:200;display:flex;gap:1px;background:var(--ash2);}
+  .lang-pill{background:var(--ash);border:none;color:var(--dust);font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.2em;padding:5px 10px;cursor:crosshair;transition:all 0.15s;text-transform:uppercase;}
+  .lang-pill.active{background:var(--red);color:var(--paper);}
 
   /* HEADER */
-  header { position:relative; border-bottom:2px solid var(--red); overflow:hidden; }
-  .header-inner { display:grid; grid-template-columns:1fr auto; align-items:end; padding:2.5rem 3rem 1.5rem; gap:2rem; position:relative; z-index:2; }
-  .logo-eyebrow { font-size:10px; letter-spacing:0.3em; color:var(--red); text-transform:uppercase; margin-bottom:0.5rem; }
-  .logo-main { font-family:'Bebas Neue',sans-serif; font-size:clamp(5rem,12vw,9rem); line-height:0.85; color:var(--paper); position:relative; }
-  .logo-main::after { content:'SCRAP'; position:absolute; left:3px; top:3px; color:var(--red); z-index:-1; opacity:0.5; }
-  .logo-sub { font-family:'Crimson Pro',serif; font-style:italic; font-size:1.1rem; color:var(--mark); margin-top:0.5rem; }
-  .header-meta { text-align:right; font-size:11px; color:var(--dust); letter-spacing:0.1em; line-height:2.2; }
-  .header-meta strong { display:block; color:var(--mark); font-size:13px; }
-  .header-scratch { position:absolute; bottom:0; left:0; right:0; height:1px; background:repeating-linear-gradient(90deg,var(--red) 0px,var(--red) 4px,transparent 4px,transparent 12px); opacity:0.4; }
+  header{position:relative;border-bottom:2px solid var(--red);overflow:hidden;}
+  .header-inner{display:grid;grid-template-columns:1fr auto;align-items:end;padding:2.5rem 3rem 1.5rem;gap:2rem;position:relative;z-index:2;}
+  .logo-eyebrow{font-size:10px;letter-spacing:0.3em;color:var(--red);text-transform:uppercase;margin-bottom:0.5rem;}
+  .logo-main{font-family:'Bebas Neue',sans-serif;font-size:clamp(5rem,12vw,9rem);line-height:0.85;color:var(--paper);position:relative;}
+  .logo-main::after{content:'SCRAP';position:absolute;left:3px;top:3px;color:var(--red);z-index:-1;opacity:0.5;}
+  .logo-sub{font-family:'Crimson Pro',serif;font-style:italic;font-size:1.1rem;color:var(--mark);margin-top:0.5rem;}
+  .header-meta{text-align:right;font-size:11px;color:var(--dust);letter-spacing:0.1em;line-height:2.2;}
+  .header-meta strong{display:block;color:var(--mark);font-size:13px;}
+  .header-scratch{position:absolute;bottom:0;left:0;right:0;height:1px;background:repeating-linear-gradient(90deg,var(--red) 0px,var(--red) 4px,transparent 4px,transparent 12px);opacity:0.4;}
 
   /* TAB NAV */
-  .tab-nav { background:var(--ash); border-bottom:1px solid var(--ash2); position:sticky; top:0; z-index:100; }
-  .tab-nav ul { display:flex; list-style:none; padding:0 3rem; overflow-x:auto; scrollbar-width:none; }
-  .tab-nav ul::-webkit-scrollbar { display:none; }
-  .tab-nav ul li button { display:block; padding:1rem 1.6rem; font-family:'Space Mono',monospace; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--mark); border:none; border-right:1px solid var(--ash2); border-bottom:2px solid transparent; background:none; cursor:crosshair; transition:color 0.15s,background 0.15s; white-space:nowrap; }
-  .tab-nav ul li:first-child button { border-left:1px solid var(--ash2); }
-  .tab-nav ul li button:hover { color:var(--paper); background:var(--ash2); }
-  .tab-nav ul li button.active { color:var(--paper); border-bottom:2px solid var(--red); }
+  .tab-nav{background:var(--ash);border-bottom:1px solid var(--ash2);position:sticky;top:0;z-index:100;}
+  .tab-nav ul{display:flex;list-style:none;padding:0 3rem;overflow-x:auto;scrollbar-width:none;}
+  .tab-nav ul::-webkit-scrollbar{display:none;}
+  .tab-nav ul li button{display:block;padding:1rem 1.6rem;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--mark);border:none;border-right:1px solid var(--ash2);border-bottom:2px solid transparent;background:none;cursor:crosshair;transition:color 0.15s,background 0.15s;white-space:nowrap;}
+  .tab-nav ul li:first-child button{border-left:1px solid var(--ash2);}
+  .tab-nav ul li button:hover{color:var(--paper);background:var(--ash2);}
+  .tab-nav ul li button.active{color:var(--paper);border-bottom:2px solid var(--red);}
 
   /* PANELS */
-  .tab-panel { display:none; }
-  .tab-panel.active { display:block; }
+  .tab-panel{display:none;}
+  .tab-panel.active{display:block;}
 
   /* LAYOUT */
-  .container { max-width:1100px; margin:0 auto; padding:0 2rem; }
-  .section-pad { padding:4rem 0; }
-  .section-label { font-size:10px; letter-spacing:0.3em; color:var(--red); text-transform:uppercase; margin-bottom:1rem; display:flex; align-items:center; gap:1rem; }
-  .section-label::after { content:''; flex:1; height:1px; background:repeating-linear-gradient(90deg,var(--ash2) 0px,var(--ash2) 4px,transparent 4px,transparent 8px); }
-  .section-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(2.5rem,5vw,4rem); line-height:1; color:var(--paper); margin-bottom:2.5rem; }
+  .container{max-width:1100px;margin:0 auto;padding:0 2rem;}
+  .section-pad{padding:4rem 0;}
+  .section-label{font-size:10px;letter-spacing:0.3em;color:var(--red);text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;gap:1rem;}
+  .section-label::after{content:'';flex:1;height:1px;background:repeating-linear-gradient(90deg,var(--ash2) 0px,var(--ash2) 4px,transparent 4px,transparent 8px);}
+  .section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4rem);line-height:1;color:var(--paper);margin-bottom:2.5rem;}
 
   /* HOME */
-  .about-text { font-family:'Crimson Pro',serif; font-size:1.15rem; color:var(--scratch); line-height:1.8; }
-  .about-text p+p { margin-top:1em; }
-  .about-tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:1.5rem; }
-  .tag { font-size:10px; letter-spacing:0.15em; text-transform:uppercase; border:1px solid var(--ash2); padding:4px 10px; color:var(--dust); }
-  .tag.hot { border-color:var(--red2); color:var(--red); }
-  .links-row { display:flex; flex-wrap:wrap; gap:1px; background:var(--ash2); margin-top:1rem; }
-  .social-card { background:var(--ash); padding:2rem; flex:1; min-width:200px; display:flex; flex-direction:column; gap:0.75rem; transition:background 0.15s; position:relative; overflow:hidden; }
-  .social-card:hover { background:var(--ash2); }
-  .social-card::before { content:''; position:absolute; bottom:0; left:0; right:0; height:2px; background:var(--red); transform:scaleX(0); transition:transform 0.2s; transform-origin:left; }
-  .social-card:hover::before { transform:scaleX(1); }
-  .social-icon { font-size:2rem; line-height:1; }
-  .social-name { font-family:'Bebas Neue',sans-serif; font-size:1.6rem; color:var(--paper); line-height:1; }
-  .social-handle { font-size:11px; color:var(--dust); }
-  .social-desc { font-size:11px; color:var(--scratch); font-family:'Crimson Pro',serif; font-style:italic; margin-top:auto; }
+  .about-text{font-family:'Crimson Pro',serif;font-size:1.15rem;color:var(--scratch);line-height:1.8;}
+  .about-text p+p{margin-top:1em;}
+  .about-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.5rem;}
+  .tag{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;border:1px solid var(--ash2);padding:4px 10px;color:var(--dust);}
+  .links-row{display:flex;flex-wrap:wrap;gap:1px;background:var(--ash2);margin-top:1rem;}
+  .social-card{background:var(--ash);padding:2rem;flex:1;min-width:200px;display:flex;flex-direction:column;gap:0.75rem;transition:background 0.15s;position:relative;overflow:hidden;}
+  .social-card:hover{background:var(--ash2);}
+  .social-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--red);transform:scaleX(0);transition:transform 0.2s;transform-origin:left;}
+  .social-card:hover::before{transform:scaleX(1);}
+  .social-icon{font-size:2rem;line-height:1;}
+  .social-name{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--paper);line-height:1;}
+  .social-handle{font-size:11px;color:var(--dust);}
+  .social-desc{font-size:11px;color:var(--scratch);font-family:'Crimson Pro',serif;font-style:italic;margin-top:auto;}
 
   /* GALLERY */
-  .gallery-controls { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; margin-bottom:2rem; }
-  .filter-bar { display:flex; gap:6px; flex-wrap:wrap; }
-  .filter-btn { background:none; border:1px solid var(--ash2); color:var(--dust); font-family:'Space Mono',monospace; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; padding:5px 12px; cursor:crosshair; transition:all 0.15s; white-space:nowrap; }
-  .filter-btn:hover,.filter-btn.active { background:var(--red); border-color:var(--red); color:var(--paper); }
-  .gallery-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:1px; background:var(--ash2); min-height:200px; }
-  .gallery-item { position:relative; aspect-ratio:3/4; background:var(--ash); overflow:hidden; cursor:pointer; }
-  .gallery-item img { width:100%; height:100%; object-fit:cover; display:block; filter:grayscale(10%); transition:filter 0.3s,transform 0.3s; }
-  .gallery-item:hover img { filter:grayscale(0%); transform:scale(1.04); }
-  .gallery-placeholder { width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; color:var(--dust); }
-  .gallery-placeholder svg { opacity:0.3; }
-  .gallery-placeholder span { font-size:9px; letter-spacing:0.2em; text-transform:uppercase; text-align:center; padding:0 1rem; }
-  .gallery-item-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(13,11,9,0.92) 0%,transparent 55%); opacity:0; transition:opacity 0.3s; display:flex; flex-direction:column; justify-content:flex-end; padding:1rem; }
-  .gallery-item:hover .gallery-item-overlay { opacity:1; }
-  .gallery-item-title { font-family:'Bebas Neue',sans-serif; font-size:1.2rem; color:var(--paper); line-height:1.1; }
-  .gallery-item-tags { display:flex; flex-wrap:wrap; gap:4px; margin-top:6px; }
-  .item-tag { font-size:8px; letter-spacing:0.1em; text-transform:uppercase; padding:2px 7px; border:1px solid; font-family:'Space Mono',monospace; }
-  .item-tag.sketch { color:var(--mark); border-color:var(--mark2); }
-  .item-tag.lineart { color:#8bbf8b; border-color:#4a7a4a; }
-  .item-tag.colored { color:#8bb8bf; border-color:#3a6a70; }
-  .item-tag.bg { color:#a08bbf; border-color:#5a3a7a; }
-  .gallery-empty { grid-column:1/-1; padding:4rem; text-align:center; font-size:11px; letter-spacing:0.2em; color:var(--dust); text-transform:uppercase; background:var(--ash); }
+  .filter-bar{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:2rem;}
+  .filter-btn{background:none;border:1px solid var(--ash2);color:var(--dust);font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;padding:5px 12px;cursor:crosshair;transition:all 0.15s;white-space:nowrap;}
+  .filter-btn:hover,.filter-btn.active{background:var(--red);border-color:var(--red);color:var(--paper);}
+  .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1px;background:var(--ash2);min-height:200px;}
+  .gallery-item{position:relative;aspect-ratio:3/4;background:var(--ash);overflow:hidden;cursor:pointer;}
+  .gallery-item img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(10%);transition:filter 0.3s,transform 0.3s;}
+  .gallery-item:hover img{filter:grayscale(0%);transform:scale(1.04);}
+  .gallery-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--dust);}
+  .gallery-placeholder svg{opacity:0.3;}
+  .gallery-placeholder span{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;text-align:center;padding:0 1rem;}
+  .gallery-item-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,11,9,0.92) 0%,transparent 55%);opacity:0;transition:opacity 0.3s;display:flex;flex-direction:column;justify-content:flex-end;padding:1rem;}
+  .gallery-item:hover .gallery-item-overlay{opacity:1;}
+  .gallery-item-title{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;color:var(--paper);line-height:1.1;}
+  .gallery-item-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px;}
+  .item-tag{font-size:8px;letter-spacing:0.1em;text-transform:uppercase;padding:2px 7px;border:1px solid;font-family:'Space Mono',monospace;}
+  .item-tag.sketch{color:var(--mark);border-color:var(--mark2);}
+  .item-tag.lineart{color:#8bbf8b;border-color:#4a7a4a;}
+  .item-tag.colored{color:#8bb8bf;border-color:#3a6a70;}
+  .item-tag.detailed{color:#bf9e8b;border-color:#7a5a3a;}
+  .item-tag.background{color:#a08bbf;border-color:#5a3a7a;}
+  .gallery-empty{grid-column:1/-1;padding:4rem;text-align:center;font-size:11px;letter-spacing:0.2em;color:var(--dust);text-transform:uppercase;background:var(--ash);}
 
   /* LIGHTBOX */
-  #lightbox { position:fixed; inset:0; background:rgba(13,11,9,0.95); z-index:9000; display:none; align-items:center; justify-content:center; cursor:pointer; }
-  #lightbox.open { display:flex; }
-  #lightbox img { max-width:90vw; max-height:90vh; object-fit:contain; cursor:default; }
-  #lightbox-close { position:absolute; top:1.5rem; right:2rem; font-family:'Bebas Neue',sans-serif; font-size:2rem; color:var(--mark); cursor:pointer; z-index:1; }
-  #lightbox-close:hover { color:var(--red); }
-  #lightbox-caption { position:absolute; bottom:1.5rem; left:50%; transform:translateX(-50%); font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.15em; color:var(--mark); text-transform:uppercase; text-align:center; }
+  #lightbox{position:fixed;inset:0;background:rgba(13,11,9,0.97);z-index:9000;display:none;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;padding:2rem;}
+  #lightbox.open{display:flex;}
+  #lightbox-img{max-width:88vw;max-height:80vh;object-fit:contain;cursor:default;}
+  #lightbox-close{position:absolute;top:1.5rem;right:2rem;font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--mark);cursor:pointer;z-index:1;line-height:1;}
+  #lightbox-close:hover{color:var(--red);}
+  #lightbox-info{margin-top:1.2rem;text-align:center;cursor:default;}
+  #lightbox-title{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--paper);letter-spacing:0.05em;}
+  #lightbox-tags{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:8px;}
 
   /* COMMISSIONS */
-  .commission-layout { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start; }
-  .price-table { display:flex; flex-direction:column; gap:1px; background:var(--ash2); }
-  .cat-header { background:var(--ash2); padding:6px 1.25rem; font-size:9px; letter-spacing:0.25em; color:var(--dust); text-transform:uppercase; margin-top:1px; }
-  .cat-header:first-child { margin-top:0; }
-  .price-row { display:grid; grid-template-columns:auto 1fr auto; align-items:center; background:var(--ash); padding:1rem 1.25rem; gap:1rem; transition:background 0.15s; }
-  .price-row:hover { background:var(--ash2); }
-  .price-num { font-family:'Bebas Neue',sans-serif; font-size:1.8rem; color:var(--paper); line-height:1; white-space:nowrap; }
-  .price-type { font-size:12px; color:var(--mark); font-weight:700; }
-  .price-desc { font-size:11px; color:var(--dust); margin-top:2px; }
-  .price-status { font-size:9px; letter-spacing:0.15em; text-transform:uppercase; padding:3px 8px; border:1px solid; white-space:nowrap; }
-  .price-status.open { color:#8bbf8b; border-color:#4a7a4a; }
-  .price-status.consult { color:var(--mark); border-color:var(--mark2); }
-  .discount-row { background:rgba(176,28,28,0.08); border-left:3px solid var(--red2); padding:0.75rem 1.25rem; display:flex; justify-content:space-between; align-items:center; gap:1rem; margin-top:1px; }
-  .disc-label { font-size:11px; color:var(--scratch); }
-  .disc-val { font-family:'Bebas Neue',sans-serif; font-size:1.4rem; color:var(--red); white-space:nowrap; }
-  .tos-box { background:var(--ash); border-left:3px solid var(--red); padding:1.5rem; margin-top:1.5rem; }
-  .tos-box h3 { font-family:'Bebas Neue',sans-serif; font-size:1.3rem; color:var(--paper); margin-bottom:1rem; }
-  .tos-box ul { list-style:none; display:flex; flex-direction:column; gap:6px; }
-  .tos-box li { font-size:12px; color:var(--scratch); padding-left:1.4em; position:relative; }
-  .tos-box li::before { content:'//'; position:absolute; left:0; color:var(--red); font-weight:700; }
-  .tos-box li.commercial::before { content:'©'; color:var(--mark); }
+  .commission-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+  .price-table{display:flex;flex-direction:column;gap:1px;background:var(--ash2);}
+  .cat-header{background:var(--ash2);padding:6px 1.25rem;font-size:9px;letter-spacing:0.25em;color:var(--dust);text-transform:uppercase;margin-top:1px;}
+  .cat-header:first-child{margin-top:0;}
+  .price-row{display:grid;grid-template-columns:auto 1fr auto;align-items:center;background:var(--ash);padding:1rem 1.25rem;gap:1rem;transition:background 0.15s;}
+  .price-row:hover{background:var(--ash2);}
+  .price-num{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--paper);line-height:1;white-space:nowrap;}
+  .price-type{font-size:12px;color:var(--mark);font-weight:700;}
+  .price-desc{font-size:11px;color:var(--dust);margin-top:2px;}
+  .price-status{font-size:9px;letter-spacing:0.15em;text-transform:uppercase;padding:3px 8px;border:1px solid;white-space:nowrap;}
+  .price-status.open{color:#8bbf8b;border-color:#4a7a4a;}
+  .price-status.consult{color:var(--mark);border-color:var(--mark2);}
+  .discount-row{background:rgba(176,28,28,0.08);border-left:3px solid var(--red2);padding:0.75rem 1.25rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-top:1px;}
+  .disc-label{font-size:11px;color:var(--scratch);}
+  .disc-val{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--red);white-space:nowrap;}
+  .tos-box{background:var(--ash);border-left:3px solid var(--red);padding:1.5rem;margin-top:1.5rem;}
+  .tos-box h3{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--paper);margin-bottom:1rem;}
+  .tos-box ul{list-style:none;display:flex;flex-direction:column;gap:6px;}
+  .tos-box li{font-size:12px;color:var(--scratch);padding-left:1.4em;position:relative;}
+  .tos-box li::before{content:'//';position:absolute;left:0;color:var(--red);font-weight:700;}
+  .tos-box li.commercial::before{content:'©';color:var(--mark);}
 
   /* FORM */
-  .form-title { font-family:'Bebas Neue',sans-serif; font-size:1.6rem; color:var(--paper); margin-bottom:1.5rem; }
-  .commission-form { display:flex; flex-direction:column; gap:1rem; }
-  .form-group { display:flex; flex-direction:column; gap:6px; }
-  .form-label { font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--dust); }
-  .form-input,.form-select,.form-textarea { background:var(--ash); border:1px solid var(--ash2); color:var(--paper); font-family:'Space Mono',monospace; font-size:12px; padding:10px 14px; outline:none; transition:border-color 0.15s; width:100%; -webkit-appearance:none; appearance:none; border-radius:0; }
-  .form-input:focus,.form-select:focus,.form-textarea:focus { border-color:var(--red); }
-  .form-select { background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b6259' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 12px center; padding-right:2rem; cursor:pointer; }
-  .form-select option { background:var(--ash); }
-  .form-textarea { resize:vertical; min-height:120px; line-height:1.6; }
-  .form-submit { background:var(--red); border:none; color:var(--paper); font-family:'Bebas Neue',sans-serif; font-size:1.4rem; letter-spacing:0.1em; padding:0.8rem 2rem; cursor:crosshair; transition:background 0.15s,transform 0.1s; align-self:flex-start; margin-top:0.5rem; }
-  .form-submit:hover { background:var(--red2); }
-  .form-submit:active { transform:scale(0.97); }
-  .form-note { font-size:11px; color:var(--dust); margin-top:0.5rem; font-family:'Crimson Pro',serif; font-style:italic; }
+  .form-title{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--paper);margin-bottom:1.5rem;}
+  .commission-form{display:flex;flex-direction:column;gap:1rem;}
+  .form-group{display:flex;flex-direction:column;gap:6px;}
+  .form-label{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--dust);}
+  .form-input,.form-select,.form-textarea{background:var(--ash);border:1px solid var(--ash2);color:var(--paper);font-family:'Space Mono',monospace;font-size:12px;padding:10px 14px;outline:none;transition:border-color 0.15s;width:100%;-webkit-appearance:none;appearance:none;border-radius:0;}
+  .form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--red);}
+  .form-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b6259' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:2rem;cursor:pointer;}
+  .form-select option{background:var(--ash);}
+  .form-textarea{resize:vertical;min-height:120px;line-height:1.6;}
+  .form-submit{background:var(--red);border:none;color:var(--paper);font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:0.1em;padding:0.8rem 2rem;cursor:crosshair;transition:background 0.15s,transform 0.1s;align-self:flex-start;margin-top:0.5rem;}
+  .form-submit:hover{background:var(--red2);}
+  .form-submit:active{transform:scale(0.97);}
+  .form-note{font-size:11px;color:var(--dust);margin-top:0.5rem;font-family:'Crimson Pro',serif;font-style:italic;}
 
   /* FOOTER */
-  footer { background:var(--ash); border-top:2px solid var(--red); padding:2rem 3rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
-  .footer-logo { font-family:'Bebas Neue',sans-serif; font-size:2rem; color:var(--paper); }
-  .footer-logo span { color:var(--red); }
-  .footer-copy { font-size:10px; letter-spacing:0.15em; color:var(--dust); text-transform:uppercase; }
+  footer{background:var(--ash);border-top:2px solid var(--red);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+  .footer-logo{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--paper);}
+  .footer-logo span{color:var(--red);}
+  .footer-copy{font-size:10px;letter-spacing:0.15em;color:var(--dust);text-transform:uppercase;}
 
-  @keyframes flicker { 0%,97%,100%{opacity:1} 98%{opacity:0.7} 99%{opacity:1} 99.5%{opacity:0.8} }
-  .flicker { animation:flicker 10s infinite; }
-  ::-webkit-scrollbar { width:4px; height:4px; }
-  ::-webkit-scrollbar-track { background:var(--ink); }
-  ::-webkit-scrollbar-thumb { background:var(--ash2); }
+  @keyframes flicker{0%,97%,100%{opacity:1}98%{opacity:0.7}99%{opacity:1}99.5%{opacity:0.8}}
+  .flicker{animation:flicker 10s infinite;}
+  ::-webkit-scrollbar{width:4px;height:4px;}
+  ::-webkit-scrollbar-track{background:var(--ink);}
+  ::-webkit-scrollbar-thumb{background:var(--ash2);}
 
-  @media(max-width:768px) {
-    .header-inner { grid-template-columns:1fr; padding:2rem 1.5rem 1rem; }
-    .tab-nav ul { padding:0 1rem; }
-    .container { padding:0 1.25rem; }
-    .commission-layout { grid-template-columns:1fr; gap:2rem; }
-    footer { flex-direction:column; text-align:center; padding:1.5rem; }
-    .gate-buttons { flex-direction:column; }
-    .lang-switcher { top:auto; bottom:1rem; right:1rem; }
-    .gallery-controls { flex-direction:column; align-items:flex-start; }
+  @media(max-width:768px){
+    .header-inner{grid-template-columns:1fr;padding:2rem 1.5rem 1rem;}
+    .tab-nav ul{padding:0 1rem;}
+    .container{padding:0 1.25rem;}
+    .commission-layout{grid-template-columns:1fr;gap:2rem;}
+    footer{flex-direction:column;text-align:center;padding:1.5rem;}
+    .gate-buttons{flex-direction:column;}
+    .lang-switcher{top:auto;bottom:1rem;right:1rem;}
   }
 </style>
 </head>
 <body class="lang-locked">
 
-<!-- GATE -->
 <div id="lang-gate" role="dialog">
   <div class="gate-deco gate-deco-1"></div>
   <div class="gate-deco gate-deco-2"></div>
@@ -196,7 +191,6 @@
   </div>
 </div>
 
-<!-- LANG SWITCHER -->
 <div class="lang-switcher" id="langSwitcher" style="display:none;">
   <button class="lang-pill active" id="btn-es" onclick="setLang('es')">ES</button>
   <button class="lang-pill" id="btn-en" onclick="setLang('en')">EN</button>
@@ -206,26 +200,27 @@
 <div id="lightbox" onclick="closeLightbox(event)">
   <span id="lightbox-close" onclick="closeLightbox()">✕</span>
   <img id="lightbox-img" src="" alt="">
-  <div id="lightbox-caption"></div>
+  <div id="lightbox-info">
+    <div id="lightbox-title"></div>
+    <div id="lightbox-tags"></div>
+  </div>
 </div>
 
-<!-- HEADER -->
 <header>
   <div class="header-inner">
     <div>
       <p class="logo-eyebrow" data-es="// Ilustraciones originales" data-en="// Original illustrations">// Ilustraciones originales</p>
       <h1 class="logo-main flicker">SCRAP</h1>
-      <p class="logo-sub" id="txt-tagline" data-es="Ilustraciones · arte original · comisiones" data-en="Illustrations · original art · commissions">Ilustraciones · arte original · comisiones</p>
+      <p id="txt-tagline" class="logo-sub" data-es="Ilustraciones · arte original · comisiones" data-en="Illustrations · original art · commissions">Ilustraciones · arte original · comisiones</p>
     </div>
     <div class="header-meta">
-      <strong id="txt-status-label" data-es="COMISIONES" data-en="COMMISSIONS">COMISIONES</strong>
+      <strong data-es="COMISIONES" data-en="COMMISSIONS">COMISIONES</strong>
       <span id="txt-status" data-es="ABIERTAS" data-en="OPEN">ABIERTAS</span>
     </div>
   </div>
   <div class="header-scratch"></div>
 </header>
 
-<!-- TAB NAV -->
 <nav class="tab-nav">
   <ul>
     <li><button class="active" onclick="switchTab('home',this)" data-es="// Inicio" data-en="// Home">// Inicio</button></li>
@@ -234,18 +229,18 @@
   </ul>
 </nav>
 
-<!-- ══ HOME ══ -->
+<!-- HOME -->
 <div class="tab-panel active" id="tab-home">
   <div class="container section-pad">
     <p class="section-label" data-es="Identidad" data-en="Identity">Identidad</p>
     <h2 class="section-title" data-es="QUÉ ES<br>SCRAP" data-en="WHAT IS<br>SCRAP">QUÉ ES<br>SCRAP</h2>
-    <div class="about-text" id="txt-about">
+    <div class="about-text" style="max-width:640px;">
       <p id="txt-desc1" data-es="SCRAP es un espacio de ilustraciones originales sin filtros. Personajes propios, narrativa con capas y contenido adulto que va más allá del fanservice vacío." data-en="SCRAP is a space for original, unfiltered illustrations. Original characters, layered storytelling, and adult content that goes beyond empty fanservice.">SCRAP es un espacio de ilustraciones originales sin filtros. Personajes propios, narrativa con capas y contenido adulto que va más allá del fanservice vacío.</p>
       <p id="txt-desc2" data-es="Cada pieza forma parte de un universo propio en construcción — hasta el contenido más explícito tiene coherencia interna y peso emocional." data-en="Every piece is part of an original universe in progress — even the most explicit content carries internal logic and emotional weight.">Cada pieza forma parte de un universo propio en construcción — hasta el contenido más explícito tiene coherencia interna y peso emocional.</p>
       <p id="txt-desc3" data-es="Este es mi sitio libre. Sin políticas de terceros, sin censura de red social." data-en="This is my free space. No third-party policies, no social media censorship.">Este es mi sitio libre. Sin políticas de terceros, sin censura de red social.</p>
     </div>
     <div class="about-tags" style="margin-bottom:3rem;">
-      <span class="tag hot">OC / Original</span>
+      <span class="tag">OC / Original</span>
       <span class="tag" data-es="Diseño de personajes" data-en="Character Design">Diseño de personajes</span>
       <span class="tag">Storytelling</span>
     </div>
@@ -267,28 +262,26 @@
   </div>
 </div>
 
-<!-- ══ GALLERY ══ -->
+<!-- GALLERY -->
 <div class="tab-panel" id="tab-gallery">
   <div class="container section-pad">
     <p class="section-label" data-es="Ejemplos de trabajo" data-en="Work examples">Ejemplos de trabajo</p>
     <h2 class="section-title" data-es="GALERÍA" data-en="GALLERY">GALERÍA</h2>
-    <div class="gallery-controls">
-      <div class="filter-bar">
-        <button class="filter-btn active" onclick="filterGallery('all',this)" data-es="Todo" data-en="All">Todo</button>
-        <button class="filter-btn" onclick="filterGallery('sketch',this)" data-es="Sketch" data-en="Sketch">Sketch</button>
-        <button class="filter-btn" onclick="filterGallery('lineart',this)" data-es="Lineart" data-en="Lineart">Lineart</button>
-        <button class="filter-btn" onclick="filterGallery('colored',this)" data-es="Coloreado" data-en="Colored">Coloreado</button>
-        <button class="filter-btn" onclick="filterGallery('detailed-colored',this)" data-es="Coloreado Detallado" data-en="Detailed Colored">Coloreado Detallado</button>
-        <button class="filter-btn" onclick="filterGallery('background',this)" data-es="Con Fondo" data-en="With Background">Con Fondo</button>
-      </div>
+    <div class="filter-bar" id="filterBar">
+      <button class="filter-btn active" onclick="filterGallery('all',this)" data-es="Todo" data-en="All">Todo</button>
+      <button class="filter-btn" onclick="filterGallery('sketch',this)" data-es="Sketch" data-en="Sketch">Sketch</button>
+      <button class="filter-btn" onclick="filterGallery('lineart',this)" data-es="Lineart" data-en="Lineart">Lineart</button>
+      <button class="filter-btn" onclick="filterGallery('colored',this)" data-es="Coloreado" data-en="Colored">Coloreado</button>
+      <button class="filter-btn" onclick="filterGallery('detailed-colored',this)" data-es="Coloreado Detallado" data-en="Detailed Colored">Coloreado Detallado</button>
+      <button class="filter-btn" onclick="filterGallery('background',this)" data-es="Con Fondo" data-en="With Background">Con Fondo</button>
     </div>
     <div class="gallery-grid" id="galleryGrid">
-      <div class="gallery-empty" id="galleryEmpty" style="display:none;" data-es="// Sin resultados" data-en="// No results">// Sin resultados</div>
+      <div class="gallery-empty" id="galleryLoading" data-es="// Cargando..." data-en="// Loading...">// Cargando...</div>
     </div>
   </div>
 </div>
 
-<!-- ══ COMMISSIONS ══ -->
+<!-- COMMISSIONS -->
 <div class="tab-panel" id="tab-commissions">
   <div class="container section-pad">
     <p class="section-label" data-es="Servicios" data-en="Services">Servicios</p>
@@ -296,14 +289,14 @@
     <div class="commission-layout">
       <div>
         <div class="cat-header" data-es="// SKETCH" data-en="// SKETCH">// SKETCH</div>
-        <div class="price-table" id="price-sketch">
+        <div class="price-table">
           <div class="price-row"><span class="price-num" id="p-s1-price">$6</span><div><div class="price-type" id="p-s1-name" data-es="Sketch — Sin color" data-en="Sketch — No color">Sketch — Sin color</div><div class="price-desc" id="p-s1-desc" data-es="Línea suelta, 1 personaje" data-en="Loose linework, 1 character">Línea suelta, 1 personaje</div></div><span class="price-status open" data-es="Abierto" data-en="Open">Abierto</span></div>
           <div class="price-row"><span class="price-num" id="p-s2-price">$10</span><div><div class="price-type" id="p-s2-name" data-es="Sketch — Coloreado" data-en="Sketch — Colored">Sketch — Coloreado</div><div class="price-desc" id="p-s2-desc" data-es="Línea suelta + color base flat, 1 personaje" data-en="Loose linework + flat base color, 1 character">Línea suelta + color base flat, 1 personaje</div></div><span class="price-status open" data-es="Abierto" data-en="Open">Abierto</span></div>
           <div class="price-row"><span class="price-num" id="p-s3-price">$14</span><div><div class="price-type" id="p-s3-name" data-es="Sketch — Coloreado Detallado" data-en="Sketch — Detailed Colored">Sketch — Coloreado Detallado</div><div class="price-desc" id="p-s3-desc" data-es="Línea suelta + flat + sombra + brillo, 1 personaje" data-en="Loose linework + flat + shadow + highlight, 1 character">Línea suelta + flat + sombra + brillo, 1 personaje</div></div><span class="price-status open" data-es="Abierto" data-en="Open">Abierto</span></div>
           <div class="price-row"><span class="price-num" id="p-s4-price">$18</span><div><div class="price-type" id="p-s4-name" data-es="Sketch — Con Fondo" data-en="Sketch — With Background">Sketch — Con Fondo</div><div class="price-desc" id="p-s4-desc" data-es="Sketch coloreado con fondo, 1 personaje" data-en="Colored sketch with background, 1 character">Sketch coloreado con fondo, 1 personaje</div></div><span class="price-status open" data-es="Abierto" data-en="Open">Abierto</span></div>
         </div>
         <div class="cat-header" data-es="// LINEART" data-en="// LINEART">// LINEART</div>
-        <div class="price-table" id="price-lineart">
+        <div class="price-table">
           <div class="price-row"><span class="price-num" id="p-l1-price">$18</span><div><div class="price-type" id="p-l1-name" data-es="Lineart — Sin color" data-en="Lineart — No color">Lineart — Sin color</div><div class="price-desc" id="p-l1-desc" data-es="Línea limpia y definida, 1 personaje" data-en="Clean defined linework, 1 character">Línea limpia y definida, 1 personaje</div></div><span class="price-status open" data-es="Abierto" data-en="Open">Abierto</span></div>
           <div class="price-row"><span class="price-num" id="p-l2-price">$23</span><div><div class="price-type" id="p-l2-name" data-es="Lineart — Coloreado" data-en="Lineart — Colored">Lineart — Coloreado</div><div class="price-desc" id="p-l2-desc" data-es="Línea limpia + color base flat, 1 personaje" data-en="Clean linework + flat base color, 1 character">Línea limpia + color base flat, 1 personaje</div></div><span class="price-status open" data-es="Abierto" data-en="Open">Abierto</span></div>
           <div class="price-row"><span class="price-num" id="p-l3-price">$28</span><div><div class="price-type" id="p-l3-name" data-es="Lineart — Coloreado Detallado" data-en="Lineart — Detailed Colored">Lineart — Coloreado Detallado</div><div class="price-desc" id="p-l3-desc" data-es="Línea limpia + flat + sombra + brillo, 1 personaje" data-en="Clean linework + flat + shadow + highlight, 1 character">Línea limpia + flat + sombra + brillo, 1 personaje</div></div><span class="price-status open" data-es="Abierto" data-en="Open">Abierto</span></div>
@@ -350,13 +343,13 @@
             <label class="form-label" data-es="Tipo de comisión" data-en="Commission type">Tipo de comisión</label>
             <select class="form-select" name="tipo" required>
               <option value="" data-es="— Selecciona —" data-en="— Select —">— Selecciona —</option>
-              <optgroup data-label-es="SKETCH" data-label-en="SKETCH" label="SKETCH">
+              <optgroup label="SKETCH">
                 <option value="sketch-bw" data-es="Sketch sin color — $6" data-en="Sketch no color — $6">Sketch sin color — $6</option>
                 <option value="sketch-col" data-es="Sketch Coloreado — $10" data-en="Sketch Colored — $10">Sketch Coloreado — $10</option>
                 <option value="sketch-det" data-es="Sketch Coloreado Detallado — $14" data-en="Sketch Detailed Colored — $14">Sketch Coloreado Detallado — $14</option>
                 <option value="sketch-bg" data-es="Sketch Con Fondo — $18" data-en="Sketch With Background — $18">Sketch Con Fondo — $18</option>
               </optgroup>
-              <optgroup data-label-es="LINEART" data-label-en="LINEART" label="LINEART">
+              <optgroup label="LINEART">
                 <option value="lineart-bw" data-es="Lineart sin color — $18" data-en="Lineart no color — $18">Lineart sin color — $18</option>
                 <option value="lineart-col" data-es="Lineart Coloreado — $23" data-en="Lineart Colored — $23">Lineart Coloreado — $23</option>
                 <option value="lineart-det" data-es="Lineart Coloreado Detallado — $28" data-en="Lineart Detailed Colored — $28">Lineart Coloreado Detallado — $28</option>
@@ -405,7 +398,6 @@
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
   <div>
     <div class="footer-logo">SCR<span>A</span>P</div>
@@ -415,65 +407,60 @@
 </footer>
 
 <script>
-/* ══ LANG ══ */
-let currentLang = 'es';
-let currentFilter = 'all';
-let galleryData = [];
+let currentLang='es', currentFilter='all', galleryData=[];
 
-const TIPO_INFO = {
-  'sketch':            { es:'Sketch',                en:'Sketch',           cls:'sketch' },
-  'lineart':           { es:'Lineart',               en:'Lineart',          cls:'lineart' },
-  'colored':           { es:'Coloreado',             en:'Colored',          cls:'colored' },
-  'detailed-colored':  { es:'Col. Detallado',        en:'Detailed Colored', cls:'colored' },
-  'background':        { es:'Con Fondo',             en:'With Background',  cls:'bg' }
+const TAG_INFO = {
+  sketch:             {es:'Sketch',               en:'Sketch',            cls:'sketch'},
+  lineart:            {es:'Lineart',              en:'Lineart',           cls:'lineart'},
+  colored:            {es:'Coloreado',            en:'Colored',           cls:'colored'},
+  'detailed-colored': {es:'Coloreado Detallado',  en:'Detailed Colored',  cls:'detailed'},
+  background:         {es:'Con Fondo',            en:'With Background',   cls:'background'}
 };
 
-function setLang(lang) {
-  currentLang = lang;
-  const gate = document.getElementById('lang-gate');
-  gate.style.opacity = '0'; gate.style.transition = 'opacity 0.4s';
-  setTimeout(() => gate.style.display = 'none', 400);
+/* ── LANG ── */
+function setLang(lang){
+  currentLang=lang;
+  const gate=document.getElementById('lang-gate');
+  gate.style.opacity='0'; gate.style.transition='opacity 0.4s';
+  setTimeout(()=>gate.style.display='none',400);
   document.body.classList.remove('lang-locked');
-  document.getElementById('langSwitcher').style.display = 'flex';
-  document.getElementById('btn-es').classList.toggle('active', lang==='es');
-  document.getElementById('btn-en').classList.toggle('active', lang==='en');
-  document.querySelectorAll('[data-es][data-en]').forEach(el => {
-    const t = el.getAttribute('data-'+lang);
-    if (!t) return;
-    if (el.tagName==='INPUT'||el.tagName==='TEXTAREA') el.placeholder=t;
-    else if (el.tagName==='OPTION'||el.tagName==='BUTTON') el.textContent=t;
+  document.getElementById('langSwitcher').style.display='flex';
+  document.getElementById('btn-es').classList.toggle('active',lang==='es');
+  document.getElementById('btn-en').classList.toggle('active',lang==='en');
+  document.querySelectorAll('[data-es][data-en]').forEach(el=>{
+    const t=el.getAttribute('data-'+lang); if(!t) return;
+    if(el.tagName==='INPUT'||el.tagName==='TEXTAREA') el.placeholder=t;
+    else if(el.tagName==='OPTION'||el.tagName==='BUTTON') el.textContent=t;
     else el.innerHTML=t;
   });
-  document.querySelectorAll('[data-placeholder-es][data-placeholder-en]').forEach(el => {
-    el.placeholder = el.getAttribute('data-placeholder-'+lang);
+  document.querySelectorAll('[data-placeholder-es][data-placeholder-en]').forEach(el=>{
+    el.placeholder=el.getAttribute('data-placeholder-'+lang);
   });
-  document.documentElement.lang = lang;
-  // Re-render gallery tags with correct language
-  if (galleryData.length > 0) renderGallery();
+  document.documentElement.lang=lang;
+  if(galleryData.length>0) renderGallery();
   loadTexts();
 }
 
-/* ══ TABS ══ */
-function switchTab(id, btn) {
-  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.tab-nav button').forEach(b => b.classList.remove('active'));
+/* ── TABS ── */
+function switchTab(id,btn){
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-nav button').forEach(b=>b.classList.remove('active'));
   document.getElementById('tab-'+id).classList.add('active');
   btn.classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
-  if (id==='gallery' && galleryData.length===0) loadGallery();
+  if(id==='gallery' && galleryData.length===0) loadGallery();
 }
 
-/* ══ TEXTS — lee site_texts.json y aplica ══ */
-async function loadTexts() {
-  try {
-    const res = await fetch('site_texts.json?v='+Date.now());
-    if (!res.ok) return;
-    const t = await res.json();
-    const apply = (id, keyEs, keyEn) => {
-      const el = document.getElementById(id);
-      if (!el) return;
-      const val = currentLang==='es' ? t[keyEs] : t[keyEn];
-      if (val) el.innerHTML = val;
+/* ── TEXTS ── */
+async function loadTexts(){
+  try{
+    const res=await fetch('site_texts.json?v='+Date.now());
+    if(!res.ok) return;
+    const t=await res.json();
+    const apply=(id,keyEs,keyEn)=>{
+      const el=document.getElementById(id); if(!el) return;
+      const val=currentLang==='es'?t[keyEs]:t[keyEn];
+      if(val) el.innerHTML=val;
     };
     apply('txt-desc1','desc1_es','desc1_en');
     apply('txt-desc2','desc2_es','desc2_en');
@@ -482,58 +469,50 @@ async function loadTexts() {
     apply('txt-tagline','tagline_es','tagline_en');
     apply('txt-footer-copy','footer_copy_es','footer_copy_en');
     apply('txt-footer-legal','footer_legal_es','footer_legal_en');
-    // Prices
-    const prices = ['s1','s2','s3','s4','l1','l2','l3','l4','e1','e2'];
-    prices.forEach(k => {
-      const priceEl = document.getElementById('p-'+k+'-price');
-      const nameEl  = document.getElementById('p-'+k+'-name');
-      const descEl  = document.getElementById('p-'+k+'-desc');
-      if (priceEl && t['p_'+k+'_price']) priceEl.textContent = t['p_'+k+'_price'];
-      if (nameEl) {
-        const v = currentLang==='es' ? t['p_'+k+'_name_es'] : t['p_'+k+'_name_en'];
-        if (v) nameEl.textContent = v;
-      }
-      if (descEl) {
-        const v = currentLang==='es' ? t['p_'+k+'_desc_es'] : t['p_'+k+'_desc_en'];
-        if (v) descEl.textContent = v;
-      }
+    ['s1','s2','s3','s4','l1','l2','l3','l4','e1','e2'].forEach(k=>{
+      const pe=document.getElementById('p-'+k+'-price');
+      const ne=document.getElementById('p-'+k+'-name');
+      const de=document.getElementById('p-'+k+'-desc');
+      if(pe&&t['p_'+k+'_price']) pe.textContent=t['p_'+k+'_price'];
+      if(ne){const v=currentLang==='es'?t['p_'+k+'_name_es']:t['p_'+k+'_name_en']; if(v) ne.textContent=v;}
+      if(de){const v=currentLang==='es'?t['p_'+k+'_desc_es']:t['p_'+k+'_desc_en']; if(v) de.textContent=v;}
     });
-    // TOS
-    for(let i=1;i<=10;i++){
-      apply('tos-'+i,'tos'+i+'_es','tos'+i+'_en');
-    }
-    // Social links
-    if (t['link_x']) document.getElementById('link-x').href = t['link_x'];
-    if (t['link_fb']) document.getElementById('link-fb').href = t['link_fb'];
-  } catch(e) {}
+    for(let i=1;i<=10;i++) apply('tos-'+i,'tos'+i+'_es','tos'+i+'_en');
+    if(t['link_x']) document.getElementById('link-x').href=t['link_x'];
+    if(t['link_fb']) document.getElementById('link-fb').href=t['link_fb'];
+  }catch(e){}
 }
 
-/* ══ GALLERY ══ */
-async function loadGallery() {
-  try {
-    const res = await fetch('galeria.json?v='+Date.now());
-    if (!res.ok) throw new Error();
-    galleryData = await res.json();
+/* ── GALLERY ── */
+async function loadGallery(){
+  try{
+    const res=await fetch('galeria.json?v='+Date.now());
+    if(!res.ok) throw new Error();
+    galleryData=await res.json();
     renderGallery();
-  } catch(e) {
-    document.getElementById('galleryGrid').innerHTML = '<div class="gallery-empty" style="display:block">// galeria.json no encontrado</div>';
+  }catch(e){
+    document.getElementById('galleryGrid').innerHTML='<div class="gallery-empty" style="display:block">// Sin obras aún</div>';
   }
 }
 
-function renderGallery() {
-  const grid = document.getElementById('galleryGrid');
-  grid.innerHTML = '';
-  let visible = 0;
-  galleryData.forEach((item, idx) => {
-    const typeMatch = currentFilter==='all' || item.tipo===currentFilter;
-    if (!typeMatch) return;
+function renderGallery(){
+  const grid=document.getElementById('galleryGrid');
+  grid.innerHTML='';
+  let visible=0;
+  galleryData.forEach(item=>{
+    const tags=item.tags||[item.tipo].filter(Boolean);
+    const typeMatch=currentFilter==='all'||tags.includes(currentFilter);
+    if(!typeMatch) return;
     visible++;
-    const info = TIPO_INFO[item.tipo] || {es:item.tipo, en:item.tipo, cls:'sketch'};
-    const tagLabel = currentLang==='es' ? info.es : info.en;
-    const div = document.createElement('div');
-    div.className = 'gallery-item';
-    div.onclick = () => openLightbox('images/'+item.archivo, item.titulo, tagLabel);
-    div.innerHTML = `
+    const tagHTML=tags.map(t=>{
+      const info=TAG_INFO[t]||{es:t,en:t,cls:'sketch'};
+      const label=currentLang==='es'?info.es:info.en;
+      return `<span class="item-tag ${info.cls}">${label}</span>`;
+    }).join('');
+    const div=document.createElement('div');
+    div.className='gallery-item';
+    div.onclick=()=>openLightbox('images/'+item.archivo,item.titulo,tags);
+    div.innerHTML=`
       <img src="images/${item.archivo}" alt="${item.titulo}"
         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
       <div class="gallery-placeholder" style="display:none;position:absolute;inset:0;">
@@ -542,49 +521,55 @@ function renderGallery() {
       </div>
       <div class="gallery-item-overlay">
         <div class="gallery-item-title">${item.titulo}</div>
-        <div class="gallery-item-tags">
-          <span class="item-tag ${info.cls}">${tagLabel}</span>
-        </div>
+        <div class="gallery-item-tags">${tagHTML}</div>
       </div>`;
     grid.appendChild(div);
   });
-  const empty = document.getElementById('galleryEmpty');
-  if (empty) {
-    empty.style.display = visible===0 ? 'block' : 'none';
-    empty.textContent = currentLang==='es' ? '// Sin resultados' : '// No results';
+  if(visible===0){
+    const e=document.createElement('div');
+    e.className='gallery-empty'; e.style.display='block';
+    e.textContent=currentLang==='es'?'// Sin resultados':'// No results';
+    grid.appendChild(e);
   }
 }
 
-function filterGallery(cat, btn) {
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+function filterGallery(cat,btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
-  currentFilter = cat;
-  if (galleryData.length > 0) renderGallery();
+  currentFilter=cat;
+  if(galleryData.length>0) renderGallery();
 }
 
-/* ══ LIGHTBOX ══ */
-function openLightbox(src, title, tag) {
-  document.getElementById('lightbox-img').src = src;
-  document.getElementById('lightbox-caption').textContent = title + (tag ? '  ·  ' + tag : '');
+/* ── LIGHTBOX ── */
+function openLightbox(src,title,tags){
+  document.getElementById('lightbox-img').src=src;
+  document.getElementById('lightbox-title').textContent=title;
+  const tagsEl=document.getElementById('lightbox-tags');
+  tagsEl.innerHTML=tags.map(t=>{
+    const info=TAG_INFO[t]||{es:t,en:t,cls:'sketch'};
+    const label=currentLang==='es'?info.es:info.en;
+    return `<span class="item-tag ${info.cls}" style="font-size:10px;padding:3px 10px;">${label}</span>`;
+  }).join('');
   document.getElementById('lightbox').classList.add('open');
-  document.body.style.overflow = 'hidden';
+  document.body.style.overflow='hidden';
 }
 
-function closeLightbox(e) {
-  if (e && e.target === document.getElementById('lightbox-img')) return;
+function closeLightbox(e){
+  if(e&&e.target===document.getElementById('lightbox-img')) return;
+  if(e&&e.target===document.getElementById('lightbox-info')) return;
+  if(e&&document.getElementById('lightbox-info').contains(e.target)) return;
   document.getElementById('lightbox').classList.remove('open');
-  document.body.style.overflow = '';
+  document.body.style.overflow='';
 }
 
-document.addEventListener('keydown', e => { if(e.key==='Escape') closeLightbox(); });
+document.addEventListener('keydown',e=>{if(e.key==='Escape') closeLightbox();});
 
-/* ══ FORM ══ */
-function handleSubmit(e) {
+/* ── FORM ── */
+function handleSubmit(e){
   e.preventDefault();
-  const data = new FormData(e.target);
-  const btn = document.getElementById('submitBtn');
-  const body = [
-    'SOLICITUD DE COMISIÓN — SCRAP','================================',
+  const data=new FormData(e.target);
+  const btn=document.getElementById('submitBtn');
+  const body=['SOLICITUD DE COMISIÓN — SCRAP','================================',
     'Nombre/Alias: '+(data.get('nombre')||''),
     'Email: '+(data.get('email')||''),
     'Tipo: '+(data.get('tipo')||''),
@@ -596,17 +581,16 @@ function handleSubmit(e) {
     '--------------------------------',
     'Referencias: '+(data.get('referencias')||'N/A'),
   ].join('\n');
-  window.location.href = 'mailto:ScrapNSFW@gmail.com'
+  window.location.href='mailto:ScrapNSFW@gmail.com'
     +'?subject='+encodeURIComponent('[SCRAP] Comisión — '+(data.get('nombre')||''))
     +'&body='+encodeURIComponent(body);
-  btn.textContent = currentLang==='es' ? 'ENVIADO ✓' : 'SENT ✓';
-  btn.style.background = '#1e4d1e';
+  btn.textContent=currentLang==='es'?'ENVIADO ✓':'SENT ✓';
+  btn.style.background='#1e4d1e';
 }
 
-/* ══ INIT ══ */
-window.addEventListener('load', () => {
+/* ── INIT ── */
+window.addEventListener('load',()=>{
   loadTexts();
-  // Pre-load gallery data silently
   fetch('galeria.json?v='+Date.now()).then(r=>r.json()).then(d=>{galleryData=d;}).catch(()=>{});
 });
 </script>
