@@ -10,7 +10,6 @@
   :root {
     --ink: #0d0b09;
     --paper: #f0ebe2;
-    --paper2: #e8e1d4;
     --red: #b01c1c;
     --red2: #7a1010;
     --ash: #2a2520;
@@ -38,473 +37,215 @@
 
   body::before {
     content: '';
-    position: fixed;
-    inset: 0;
+    position: fixed; inset: 0;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 9999;
-    mix-blend-mode: overlay;
-  }
-
-  body::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px);
-    pointer-events: none;
-    z-index: 9998;
+    pointer-events: none; z-index: 9999; mix-blend-mode: overlay;
   }
 
   a { color: inherit; text-decoration: none; }
 
-  /* ═══ LANGUAGE GATE ═══ */
+  /* GATE */
   #lang-gate {
-    position: fixed;
-    inset: 0;
-    background: var(--ink);
-    z-index: 10000;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 3rem;
+    position: fixed; inset: 0;
+    background: var(--ink); z-index: 10000;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 3rem;
   }
-
   .gate-logo {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(5rem, 15vw, 10rem);
-    color: var(--paper);
-    line-height: 1;
-    position: relative;
-    letter-spacing: 0.02em;
+    font-size: clamp(5rem,15vw,10rem);
+    color: var(--paper); line-height: 1; position: relative;
   }
-
   .gate-logo::after {
-    content: 'SCRAP';
-    position: absolute;
-    left: 4px; top: 4px;
-    color: var(--red);
-    z-index: -1;
-    opacity: 0.5;
+    content: 'SCRAP'; position: absolute; left: 4px; top: 4px;
+    color: var(--red); z-index: -1; opacity: 0.5;
   }
-
   .gate-sub {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 1rem;
-    color: var(--dust);
-    letter-spacing: 0.2em;
-    text-align: center;
-    margin-top: -2rem;
+    font-family: 'Crimson Pro', serif; font-style: italic;
+    font-size: 1rem; color: var(--dust); letter-spacing: 0.2em;
+    text-align: center; margin-top: -2rem;
   }
-
-  .gate-label {
-    font-size: 10px;
-    letter-spacing: 0.3em;
-    color: var(--dust);
-    text-transform: uppercase;
-    text-align: center;
-  }
-
+  .gate-label { font-size: 10px; letter-spacing: 0.3em; color: var(--dust); text-transform: uppercase; text-align: center; }
   .gate-buttons { display: flex; gap: 1px; background: var(--ash2); }
-
   .gate-btn {
-    background: var(--ash);
-    border: none;
-    color: var(--mark);
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2rem;
-    letter-spacing: 0.1em;
-    padding: 1.2rem 3rem;
-    cursor: crosshair;
+    background: var(--ash); border: none; color: var(--mark);
+    font-family: 'Bebas Neue', sans-serif; font-size: 2rem;
+    letter-spacing: 0.1em; padding: 1.2rem 3rem; cursor: crosshair;
     transition: background 0.15s, color 0.15s;
-    position: relative;
-    overflow: hidden;
   }
-
   .gate-btn:hover { background: var(--red); color: var(--paper); }
-
-  .gate-btn .gate-btn-sub {
-    display: block;
-    font-family: 'Space Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 0.2em;
-    color: var(--dust);
-    margin-top: 4px;
-    text-transform: uppercase;
+  .gate-btn-sub {
+    display: block; font-family: 'Space Mono', monospace;
+    font-size: 9px; letter-spacing: 0.2em; color: var(--dust);
+    margin-top: 4px; text-transform: uppercase;
   }
-
   .gate-btn:hover .gate-btn-sub { color: rgba(240,235,226,0.6); }
-
   .gate-warning {
-    font-size: 9px;
-    letter-spacing: 0.2em;
-    color: var(--red);
-    text-transform: uppercase;
-    border: 1px solid var(--red2);
-    padding: 6px 16px;
+    font-size: 9px; letter-spacing: 0.2em; color: var(--red);
+    text-transform: uppercase; border: 1px solid var(--red2); padding: 6px 16px;
   }
-
   .gate-deco { position: absolute; border: 1px solid var(--ash2); pointer-events: none; }
   .gate-deco-1 { width: 300px; height: 300px; top: -80px; left: -80px; transform: rotate(20deg); opacity: 0.2; }
   .gate-deco-2 { width: 200px; height: 200px; bottom: -50px; right: -50px; transform: rotate(-15deg); opacity: 0.15; }
 
-  /* ═══ LANG SWITCHER ═══ */
+  /* LANG SWITCHER */
   .lang-switcher {
-    position: fixed;
-    top: 12px; right: 1.5rem;
-    z-index: 200;
-    display: flex;
-    gap: 1px;
-    background: var(--ash2);
+    position: fixed; top: 12px; right: 1.5rem;
+    z-index: 200; display: flex; gap: 1px; background: var(--ash2);
   }
-
   .lang-pill {
-    background: var(--ash);
-    border: none;
-    color: var(--dust);
-    font-family: 'Space Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 0.2em;
-    padding: 5px 10px;
-    cursor: crosshair;
-    transition: all 0.15s;
-    text-transform: uppercase;
+    background: var(--ash); border: none; color: var(--dust);
+    font-family: 'Space Mono', monospace; font-size: 9px;
+    letter-spacing: 0.2em; padding: 5px 10px; cursor: crosshair;
+    transition: all 0.15s; text-transform: uppercase;
   }
-
   .lang-pill.active { background: var(--red); color: var(--paper); }
 
-  /* ═══ HEADER ═══ */
-  header {
-    position: relative;
-    border-bottom: 2px solid var(--red);
-    overflow: hidden;
-  }
-
+  /* HEADER */
+  header { position: relative; border-bottom: 2px solid var(--red); overflow: hidden; }
   .header-inner {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: end;
-    padding: 2.5rem 3rem 1.5rem;
-    gap: 2rem;
-    position: relative;
-    z-index: 2;
+    display: grid; grid-template-columns: 1fr auto;
+    align-items: end; padding: 2.5rem 3rem 1.5rem;
+    gap: 2rem; position: relative; z-index: 2;
   }
-
-  .logo-eyebrow {
-    font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.3em;
-    color: var(--red);
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-  }
-
+  .logo-eyebrow { font-size: 10px; letter-spacing: 0.3em; color: var(--red); text-transform: uppercase; margin-bottom: 0.5rem; }
   .logo-main {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(5rem, 12vw, 9rem);
-    line-height: 0.85;
-    color: var(--paper);
-    letter-spacing: 0.02em;
-    position: relative;
+    font-size: clamp(5rem,12vw,9rem); line-height: 0.85;
+    color: var(--paper); position: relative;
   }
-
   .logo-main::after {
-    content: 'SCRAP';
-    position: absolute;
-    left: 3px; top: 3px;
-    color: var(--red);
-    z-index: -1;
-    opacity: 0.5;
+    content: 'SCRAP'; position: absolute; left: 3px; top: 3px;
+    color: var(--red); z-index: -1; opacity: 0.5;
   }
-
-  .logo-sub {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 1.1rem;
-    color: var(--mark);
-    margin-top: 0.5rem;
-    letter-spacing: 0.05em;
-  }
-
-  .header-meta {
-    text-align: right;
-    font-size: 11px;
-    color: var(--dust);
-    letter-spacing: 0.1em;
-    line-height: 2.2;
-  }
-
+  .logo-sub { font-family: 'Crimson Pro', serif; font-style: italic; font-size: 1.1rem; color: var(--mark); margin-top: 0.5rem; }
+  .header-meta { text-align: right; font-size: 11px; color: var(--dust); letter-spacing: 0.1em; line-height: 2.2; }
   .header-meta strong { display: block; color: var(--mark); font-size: 13px; }
-
   .header-scratch {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 1px;
+    position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
     background: repeating-linear-gradient(90deg, var(--red) 0px, var(--red) 4px, transparent 4px, transparent 12px);
     opacity: 0.4;
   }
 
-  .header-diagonal {
-    position: absolute;
-    top: -20px; right: -60px;
-    width: 200px; height: 200px;
-    border: 1px solid var(--red2);
-    transform: rotate(15deg);
-    opacity: 0.15;
-    pointer-events: none;
-  }
-
-  /* ═══ TAB NAV ═══ */
-  .tab-nav {
-    background: var(--ash);
-    border-bottom: 1px solid var(--ash2);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-
-  .tab-nav ul {
-    display: flex;
-    list-style: none;
-    padding: 0 3rem;
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
-
+  /* TAB NAV */
+  .tab-nav { background: var(--ash); border-bottom: 1px solid var(--ash2); position: sticky; top: 0; z-index: 100; }
+  .tab-nav ul { display: flex; list-style: none; padding: 0 3rem; overflow-x: auto; scrollbar-width: none; }
   .tab-nav ul::-webkit-scrollbar { display: none; }
-
   .tab-nav ul li button {
-    display: block;
-    padding: 1rem 1.6rem;
-    font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--mark);
-    border: none;
+    display: block; padding: 1rem 1.6rem;
+    font-family: 'Space Mono', monospace; font-size: 10px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--mark); border: none;
     border-right: 1px solid var(--ash2);
     border-bottom: 2px solid transparent;
-    background: none;
-    cursor: crosshair;
-    transition: color 0.15s, background 0.15s;
-    white-space: nowrap;
+    background: none; cursor: crosshair;
+    transition: color 0.15s, background 0.15s; white-space: nowrap;
   }
-
   .tab-nav ul li:first-child button { border-left: 1px solid var(--ash2); }
   .tab-nav ul li button:hover { color: var(--paper); background: var(--ash2); }
   .tab-nav ul li button.active { color: var(--paper); border-bottom: 2px solid var(--red); }
 
-  /* ═══ TAB PANELS ═══ */
+  /* PANELS */
   .tab-panel { display: none; }
   .tab-panel.active { display: block; }
 
-  /* ═══ LAYOUT ═══ */
+  /* LAYOUT */
   .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
   .section-pad { padding: 4rem 0; }
-
   .section-label {
-    font-size: 10px;
-    letter-spacing: 0.3em;
-    color: var(--red);
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+    font-size: 10px; letter-spacing: 0.3em; color: var(--red);
+    text-transform: uppercase; margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 1rem;
   }
-
   .section-label::after {
-    content: '';
-    flex: 1;
-    height: 1px;
+    content: ''; flex: 1; height: 1px;
     background: repeating-linear-gradient(90deg, var(--ash2) 0px, var(--ash2) 4px, transparent 4px, transparent 8px);
   }
-
   .section-title {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    line-height: 1;
-    color: var(--paper);
-    margin-bottom: 2.5rem;
+    font-size: clamp(2.5rem,5vw,4rem); line-height: 1;
+    color: var(--paper); margin-bottom: 2.5rem;
   }
 
-  /* ═══ HOME TAB ═══ */
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: start;
-  }
-
-  .about-text {
-    font-family: 'Crimson Pro', serif;
-    font-size: 1.15rem;
-    color: var(--scratch);
-    line-height: 1.8;
-  }
-
+  /* HOME */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .about-text { font-family: 'Crimson Pro', serif; font-size: 1.15rem; color: var(--scratch); line-height: 1.8; }
   .about-text p + p { margin-top: 1em; }
-  .about-text em { color: var(--paper); font-style: italic; }
-
   .about-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1.5rem; }
-
-  .tag {
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    border: 1px solid var(--ash2);
-    padding: 4px 10px;
-    color: var(--dust);
-  }
-
+  .tag { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; border: 1px solid var(--ash2); padding: 4px 10px; color: var(--dust); }
   .tag.hot { border-color: var(--red2); color: var(--red); }
-
-  .about-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: var(--ash2);
-    border: 1px solid var(--ash2);
-  }
-
+  .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--ash2); border: 1px solid var(--ash2); }
   .stat-cell { background: var(--ash); padding: 1.5rem; }
-
-  .stat-cell .num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 3rem;
-    color: var(--paper);
-    line-height: 1;
-    display: block;
+  .stat-cell .num { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: var(--paper); line-height: 1; display: block; }
+  .stat-cell .lbl { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--dust); margin-top: 4px; display: block; }
+  .links-row { display: flex; flex-wrap: wrap; gap: 1px; background: var(--ash2); margin-top: 2rem; }
+  .social-card {
+    background: var(--ash); padding: 2rem; flex: 1; min-width: 200px;
+    display: flex; flex-direction: column; gap: 0.75rem;
+    transition: background 0.15s; position: relative; overflow: hidden;
   }
-
-  .stat-cell .lbl {
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--dust);
-    margin-top: 4px;
-    display: block;
+  .social-card:hover { background: var(--ash2); }
+  .social-card::before {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+    background: var(--red); transform: scaleX(0); transition: transform 0.2s; transform-origin: left;
   }
+  .social-card:hover::before { transform: scaleX(1); }
+  .social-icon { font-size: 2rem; line-height: 1; }
+  .social-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: var(--paper); line-height: 1; }
+  .social-handle { font-size: 11px; color: var(--dust); }
+  .social-desc { font-size: 11px; color: var(--scratch); font-family: 'Crimson Pro', serif; font-style: italic; margin-top: auto; }
+  .social-badge { display: inline-block; font-size: 9px; letter-spacing: 0.1em; padding: 2px 8px; background: var(--red); color: var(--paper); align-self: flex-start; }
+  .social-badge.sfw { background: transparent; border: 1px solid var(--ash2); color: var(--dust); }
 
-  /* ═══ GALLERY TAB ═══ */
-  .gallery-controls {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 2rem;
-  }
-
+  /* GALLERY */
+  .gallery-controls { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem; }
   .filter-bar { display: flex; gap: 6px; flex-wrap: wrap; }
-
   .filter-btn {
-    background: none;
-    border: 1px solid var(--ash2);
-    color: var(--dust);
-    font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 5px 12px;
-    cursor: crosshair;
-    transition: all 0.15s;
-    white-space: nowrap;
+    background: none; border: 1px solid var(--ash2); color: var(--dust);
+    font-family: 'Space Mono', monospace; font-size: 10px;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 5px 12px; cursor: crosshair; transition: all 0.15s; white-space: nowrap;
   }
-
-  .filter-btn:hover, .filter-btn.active {
-    background: var(--red); border-color: var(--red); color: var(--paper);
-  }
-
-  /* SFW / NSFW toggle */
-  .nsfw-toggle {
-    display: flex;
-    gap: 1px;
-    background: var(--ash2);
-    flex-shrink: 0;
-  }
-
+  .filter-btn:hover, .filter-btn.active { background: var(--red); border-color: var(--red); color: var(--paper); }
+  .nsfw-toggle { display: flex; gap: 1px; background: var(--ash2); flex-shrink: 0; }
   .nsfw-btn {
-    background: var(--ash);
-    border: none;
-    color: var(--dust);
-    font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    padding: 6px 16px;
-    cursor: crosshair;
-    transition: all 0.15s;
-    text-transform: uppercase;
+    background: var(--ash); border: none; color: var(--dust);
+    font-family: 'Space Mono', monospace; font-size: 10px;
+    letter-spacing: 0.15em; padding: 6px 16px; cursor: crosshair;
+    transition: all 0.15s; text-transform: uppercase;
   }
-
   .nsfw-btn.active-sfw { background: #1e3d1e; color: #8bbf8b; }
   .nsfw-btn.active-nsfw { background: var(--red2); color: var(--paper); }
+  .nsfw-btn.active-all { background: var(--ash2); color: var(--mark); }
 
   .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 1px;
-    background: var(--ash2);
+    grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
+    gap: 1px; background: var(--ash2);
+    min-height: 200px;
   }
-
   .gallery-item {
-    position: relative;
-    aspect-ratio: 3/4;
-    background: var(--ash);
-    overflow: hidden;
-    cursor: crosshair;
-    display: none;
+    position: relative; aspect-ratio: 3/4;
+    background: var(--ash); overflow: hidden; cursor: crosshair;
   }
-
-  .gallery-item.visible { display: block; }
-
-  .gallery-item img {
-    width: 100%; height: 100%; object-fit: cover; display: block;
-    filter: grayscale(15%); transition: filter 0.3s, transform 0.3s;
-  }
-
+  .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(15%); transition: filter 0.3s, transform 0.3s; }
   .gallery-item:hover img { filter: grayscale(0%); transform: scale(1.03); }
-
   .gallery-placeholder {
-    width: 100%; height: 100%;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    gap: 8px; color: var(--dust);
+    width: 100%; height: 100%; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 8px; color: var(--dust);
   }
-
   .gallery-placeholder svg { opacity: 0.3; }
-
-  .gallery-placeholder span {
-    font-size: 9px; letter-spacing: 0.2em;
-    text-transform: uppercase; text-align: center; padding: 0 1rem;
-  }
-
+  .gallery-placeholder span { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; text-align: center; padding: 0 1rem; }
   .gallery-item-overlay {
     position: absolute; inset: 0;
     background: linear-gradient(to top, rgba(13,11,9,0.92) 0%, transparent 55%);
     opacity: 0; transition: opacity 0.3s;
-    display: flex; flex-direction: column;
-    justify-content: flex-end; padding: 1rem;
+    display: flex; flex-direction: column; justify-content: flex-end; padding: 1rem;
   }
-
   .gallery-item:hover .gallery-item-overlay { opacity: 1; }
-
-  .gallery-item-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.2rem; color: var(--paper); line-height: 1.1;
-  }
-
-  .gallery-item-tags {
-    display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px;
-  }
-
-  .item-tag {
-    font-size: 8px; letter-spacing: 0.1em;
-    text-transform: uppercase; padding: 2px 7px; border: 1px solid;
-    font-family: 'Space Mono', monospace;
-  }
-
+  .gallery-item-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; color: var(--paper); line-height: 1.1; }
+  .gallery-item-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+  .item-tag { font-size: 8px; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 7px; border: 1px solid; font-family: 'Space Mono', monospace; }
   .item-tag.sketch { color: var(--mark); border-color: var(--mark2); }
   .item-tag.lineart { color: #8bbf8b; border-color: #4a7a4a; }
   .item-tag.colored { color: #8bb8bf; border-color: #3a6a70; }
@@ -512,126 +253,39 @@
   .item-tag.nsfw-tag { color: var(--red); border-color: var(--red2); }
   .item-tag.sfw-tag { color: var(--dust); border-color: var(--ash2); }
   .item-tag.bg { color: #a08bbf; border-color: #5a3a7a; }
+  .gallery-nsfw-lock { position: absolute; top: 8px; right: 8px; background: var(--red); color: var(--paper); font-size: 8px; letter-spacing: 0.1em; padding: 2px 6px; font-family: 'Space Mono', monospace; }
+  .gallery-empty { grid-column: 1/-1; padding: 4rem; text-align: center; font-size: 11px; letter-spacing: 0.2em; color: var(--dust); text-transform: uppercase; background: var(--ash); }
+  .gallery-loading { grid-column: 1/-1; padding: 4rem; text-align: center; font-size: 11px; letter-spacing: 0.2em; color: var(--dust); text-transform: uppercase; background: var(--ash); }
 
-  .gallery-nsfw-lock {
-    position: absolute; top: 8px; right: 8px;
-    background: var(--red); color: var(--paper);
-    font-size: 8px; letter-spacing: 0.1em; padding: 2px 6px;
-    font-family: 'Space Mono', monospace;
-  }
-
-  .gallery-empty {
-    grid-column: 1 / -1;
-    padding: 4rem;
-    text-align: center;
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    color: var(--dust);
-    text-transform: uppercase;
-    background: var(--ash);
-    display: none;
-  }
-
-  /* ═══ COMMISSIONS TAB ═══ */
-  .commission-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: start;
-  }
-
+  /* COMMISSIONS */
+  .commission-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
   .price-table { display: flex; flex-direction: column; gap: 1px; background: var(--ash2); }
-
-  .cat-header {
-    background: var(--ash2);
-    padding: 6px 1.25rem;
-    font-size: 9px;
-    letter-spacing: 0.25em;
-    color: var(--dust);
-    text-transform: uppercase;
-    margin-top: 1px;
-  }
-
+  .cat-header { background: var(--ash2); padding: 6px 1.25rem; font-size: 9px; letter-spacing: 0.25em; color: var(--dust); text-transform: uppercase; margin-top: 1px; }
   .cat-header:first-child { margin-top: 0; }
-
-  .price-row {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    background: var(--ash);
-    padding: 1rem 1.25rem;
-    gap: 1rem;
-    transition: background 0.15s;
-  }
-
+  .price-row { display: grid; grid-template-columns: auto 1fr auto; align-items: center; background: var(--ash); padding: 1rem 1.25rem; gap: 1rem; transition: background 0.15s; }
   .price-row:hover { background: var(--ash2); }
-
-  .price-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.8rem; color: var(--paper); line-height: 1; white-space: nowrap;
-  }
-
+  .price-num { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; color: var(--paper); line-height: 1; white-space: nowrap; }
   .price-type { font-size: 12px; color: var(--mark); font-weight: 700; }
   .price-desc { font-size: 11px; color: var(--dust); margin-top: 2px; }
-
-  .price-status {
-    font-size: 9px; letter-spacing: 0.15em;
-    text-transform: uppercase; padding: 3px 8px; border: 1px solid;
-    white-space: nowrap;
-  }
-
+  .price-status { font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; padding: 3px 8px; border: 1px solid; white-space: nowrap; }
   .price-status.open { color: #8bbf8b; border-color: #4a7a4a; }
-  .price-status.closed { color: var(--red); border-color: var(--red2); }
   .price-status.consult { color: var(--mark); border-color: var(--mark2); }
-
   .discount-section { margin-top: 1px; }
-
-  .discount-row {
-    background: rgba(176,28,28,0.08);
-    border-left: 3px solid var(--red2);
-    padding: 0.75rem 1.25rem;
-    display: flex; justify-content: space-between; align-items: center;
-    gap: 1rem;
-  }
-
+  .discount-row { background: rgba(176,28,28,0.08); border-left: 3px solid var(--red2); padding: 0.75rem 1.25rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
   .disc-label { font-size: 11px; color: var(--scratch); }
   .disc-val { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; color: var(--red); white-space: nowrap; }
-
-  .tos-box {
-    background: var(--ash);
-    border-left: 3px solid var(--red);
-    padding: 1.5rem; margin-top: 1.5rem;
-  }
-
-  .tos-box h3 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.3rem; color: var(--paper); margin-bottom: 1rem;
-  }
-
+  .tos-box { background: var(--ash); border-left: 3px solid var(--red); padding: 1.5rem; margin-top: 1.5rem; }
+  .tos-box h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; color: var(--paper); margin-bottom: 1rem; }
   .tos-box ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
-
-  .tos-box li {
-    font-size: 12px; color: var(--scratch);
-    padding-left: 1.4em; position: relative;
-  }
-
+  .tos-box li { font-size: 12px; color: var(--scratch); padding-left: 1.4em; position: relative; }
   .tos-box li::before { content: '//'; position: absolute; left: 0; color: var(--red); font-weight: 700; }
   .tos-box li.commercial::before { content: '©'; color: var(--mark); }
 
-  /* ═══ FORM ═══ */
-  .form-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.6rem; color: var(--paper); margin-bottom: 1.5rem;
-  }
-
+  /* FORM */
+  .form-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: var(--paper); margin-bottom: 1.5rem; }
   .commission-form { display: flex; flex-direction: column; gap: 1rem; }
   .form-group { display: flex; flex-direction: column; gap: 6px; }
-
-  .form-label {
-    font-size: 10px; letter-spacing: 0.2em;
-    text-transform: uppercase; color: var(--dust);
-  }
-
+  .form-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dust); }
   .form-input, .form-select, .form-textarea {
     background: var(--ash); border: 1px solid var(--ash2);
     color: var(--paper); font-family: 'Space Mono', monospace;
@@ -639,106 +293,39 @@
     transition: border-color 0.15s; width: 100%;
     -webkit-appearance: none; appearance: none; border-radius: 0;
   }
-
   .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--red); }
-
   .form-select {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b6259' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 12px center;
+    background-repeat: no-repeat; background-position: right 12px center;
     padding-right: 2rem; cursor: pointer;
   }
-
   .form-select option { background: var(--ash); }
   .form-textarea { resize: vertical; min-height: 120px; line-height: 1.6; }
-
   .form-submit {
-    background: var(--red); border: none;
-    color: var(--paper); font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.4rem; letter-spacing: 0.1em;
-    padding: 0.8rem 2rem; cursor: crosshair;
-    transition: background 0.15s, transform 0.1s;
-    align-self: flex-start; margin-top: 0.5rem;
+    background: var(--red); border: none; color: var(--paper);
+    font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem;
+    letter-spacing: 0.1em; padding: 0.8rem 2rem; cursor: crosshair;
+    transition: background 0.15s, transform 0.1s; align-self: flex-start; margin-top: 0.5rem;
   }
-
   .form-submit:hover { background: var(--red2); }
   .form-submit:active { transform: scale(0.97); }
   .form-note { font-size: 11px; color: var(--dust); margin-top: 0.5rem; font-family: 'Crimson Pro', serif; font-style: italic; }
 
-  .form-success {
-    display: none;
-    background: rgba(30,77,30,0.2);
-    border-left: 3px solid #4a7a4a;
-    padding: 1rem 1.25rem;
-    font-size: 12px;
-    color: #8bbf8b;
-    margin-top: 0.5rem;
-  }
-
-  /* ═══ SOCIALS SECTION (inside home) ═══ */
-  .links-row {
-    display: flex; flex-wrap: wrap;
-    gap: 1px; background: var(--ash2); margin-top: 4rem;
-  }
-
-  .social-card {
-    background: var(--ash); padding: 2rem; flex: 1; min-width: 200px;
-    display: flex; flex-direction: column; gap: 0.75rem;
-    transition: background 0.15s; position: relative; overflow: hidden;
-  }
-
-  .social-card:hover { background: var(--ash2); }
-
-  .social-card::before {
-    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
-    background: var(--red); transform: scaleX(0);
-    transition: transform 0.2s; transform-origin: left;
-  }
-
-  .social-card:hover::before { transform: scaleX(1); }
-
-  .social-icon { font-size: 2rem; line-height: 1; }
-  .social-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: var(--paper); line-height: 1; }
-  .social-handle { font-size: 11px; color: var(--dust); font-family: 'Space Mono', monospace; }
-  .social-desc { font-size: 11px; color: var(--scratch); font-family: 'Crimson Pro', serif; font-style: italic; margin-top: auto; }
-
-  .social-badge {
-    display: inline-block; font-size: 9px; letter-spacing: 0.1em;
-    padding: 2px 8px; background: var(--red); color: var(--paper); align-self: flex-start;
-  }
-
-  .social-badge.sfw { background: transparent; border: 1px solid var(--ash2); color: var(--dust); }
-
-  /* ═══ FOOTER ═══ */
-  footer {
-    background: var(--ash); border-top: 2px solid var(--red);
-    padding: 2rem 3rem;
-    display: flex; justify-content: space-between;
-    align-items: center; flex-wrap: wrap; gap: 1rem;
-  }
-
+  /* FOOTER */
+  footer { background: var(--ash); border-top: 2px solid var(--red); padding: 2rem 3rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
   .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--paper); }
   .footer-logo span { color: var(--red); }
   .footer-copy { font-size: 10px; letter-spacing: 0.15em; color: var(--dust); text-transform: uppercase; }
   .footer-warning { font-size: 10px; color: var(--red); letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid var(--red2); padding: 4px 12px; }
 
-  @keyframes flicker {
-    0%, 97%, 100% { opacity: 1; }
-    98% { opacity: 0.7; }
-    99% { opacity: 1; }
-    99.5% { opacity: 0.8; }
-  }
-
+  @keyframes flicker { 0%,97%,100%{opacity:1} 98%{opacity:0.7} 99%{opacity:1} 99.5%{opacity:0.8} }
   .flicker { animation: flicker 10s infinite; }
-
   ::-webkit-scrollbar { width: 4px; height: 4px; }
   ::-webkit-scrollbar-track { background: var(--ink); }
   ::-webkit-scrollbar-thumb { background: var(--ash2); }
-  ::-webkit-scrollbar-thumb:hover { background: var(--red2); }
 
   @media (max-width: 768px) {
     .header-inner { grid-template-columns: 1fr; padding: 2rem 1.5rem 1rem; }
-    .header-meta { text-align: left; }
     .tab-nav ul { padding: 0 1rem; }
     .container { padding: 0 1.25rem; }
     .about-grid, .commission-layout { grid-template-columns: 1fr; gap: 2rem; }
@@ -751,43 +338,27 @@
 </head>
 <body class="lang-locked">
 
-<!-- ═══════════ LANGUAGE GATE ═══════════ -->
-<div id="lang-gate" role="dialog" aria-label="Language selection">
+<div id="lang-gate" role="dialog">
   <div class="gate-deco gate-deco-1"></div>
   <div class="gate-deco gate-deco-2"></div>
-
   <div style="text-align:center;">
     <div class="gate-logo flicker">SCRAP</div>
     <p class="gate-sub">original illustrations &nbsp;·&nbsp; ilustraciones originales</p>
   </div>
-
-  <div>
-    <p class="gate-label">Choose your language / Elige tu idioma</p>
-  </div>
-
+  <p class="gate-label">Choose your language / Elige tu idioma</p>
   <div class="gate-buttons">
-    <button class="gate-btn" onclick="setLang('es')">
-      ESPAÑOL
-      <span class="gate-btn-sub">Continuar en español</span>
-    </button>
-    <button class="gate-btn" onclick="setLang('en')">
-      ENGLISH
-      <span class="gate-btn-sub">Continue in English</span>
-    </button>
+    <button class="gate-btn" onclick="setLang('es')">ESPAÑOL<span class="gate-btn-sub">Continuar en español</span></button>
+    <button class="gate-btn" onclick="setLang('en')">ENGLISH<span class="gate-btn-sub">Continue in English</span></button>
   </div>
-
   <p class="gate-warning">+18 · Adult content inside · Contenido adulto</p>
 </div>
 
-<!-- ═══════════ LANG SWITCHER ═══════════ -->
 <div class="lang-switcher" id="langSwitcher" style="display:none;">
   <button class="lang-pill active" id="btn-es" onclick="setLang('es')">ES</button>
   <button class="lang-pill" id="btn-en" onclick="setLang('en')">EN</button>
 </div>
 
-<!-- ═══════════ HEADER ═══════════ -->
 <header>
-  <div class="header-diagonal"></div>
   <div class="header-inner">
     <div>
       <p class="logo-eyebrow" data-es="// Ilustraciones originales — contenido adulto" data-en="// Original illustrations — adult content">// Ilustraciones originales — contenido adulto</p>
@@ -805,7 +376,6 @@
   <div class="header-scratch"></div>
 </header>
 
-<!-- ═══════════ TAB NAV ═══════════ -->
 <nav class="tab-nav">
   <ul>
     <li><button class="active" onclick="switchTab('home',this)" data-es="// Inicio" data-en="// Home">// Inicio</button></li>
@@ -814,7 +384,7 @@
   </ul>
 </nav>
 
-<!-- ═══════════ HOME TAB ═══════════ -->
+<!-- HOME -->
 <div class="tab-panel active" id="tab-home">
   <div class="container section-pad">
     <p class="section-label" data-es="Identidad" data-en="Identity">Identidad</p>
@@ -835,452 +405,191 @@
       </div>
       <div>
         <div class="about-stats">
-          <div class="stat-cell">
-            <span class="num">$6</span>
-            <span class="lbl" data-es="USD — Sketch desde" data-en="USD — Sketch from">USD — Sketch desde</span>
-          </div>
-          <div class="stat-cell">
-            <span class="num">$18</span>
-            <span class="lbl" data-es="USD — Lineart desde" data-en="USD — Lineart from">USD — Lineart desde</span>
-          </div>
-          <div class="stat-cell">
-            <span class="num" data-es="ABIERTO" data-en="OPEN">ABIERTO</span>
-            <span class="lbl" data-es="Estado comisiones" data-en="Commission status">Estado comisiones</span>
-          </div>
-          <div class="stat-cell">
-            <span class="num">100%</span>
-            <span class="lbl" data-es="Pago por adelantado" data-en="Full upfront payment">Pago por adelantado</span>
-          </div>
+          <div class="stat-cell"><span class="num">$6</span><span class="lbl" data-es="USD — Sketch desde" data-en="USD — Sketch from">USD — Sketch desde</span></div>
+          <div class="stat-cell"><span class="num">$18</span><span class="lbl" data-es="USD — Lineart desde" data-en="USD — Lineart from">USD — Lineart desde</span></div>
+          <div class="stat-cell"><span class="num" data-es="ABIERTO" data-en="OPEN">ABIERTO</span><span class="lbl" data-es="Estado comisiones" data-en="Commission status">Estado comisiones</span></div>
+          <div class="stat-cell"><span class="num">100%</span><span class="lbl" data-es="Pago por adelantado" data-en="Full upfront payment">Pago por adelantado</span></div>
         </div>
-
-        <div style="margin-top:2rem;">
-          <p class="section-label" data-es="Redes" data-en="Socials">Redes</p>
-          <div class="links-row">
-            <a href="https://x.com/ScrapNSFW" target="_blank" rel="noopener" class="social-card">
-              <div class="social-icon">𝕏</div>
-              <div class="social-name">X / Twitter</div>
-              <div class="social-handle">@ScrapNSFW</div>
-              <span class="social-badge">NSFW</span>
-              <p class="social-desc" data-es="Ilustraciones sin filtro, WIPs y actualizaciones." data-en="Unfiltered illustrations, WIPs and updates.">Ilustraciones sin filtro, WIPs y actualizaciones.</p>
-            </a>
-            <a href="https://facebook.com/TU_PAGINA_FB" target="_blank" rel="noopener" class="social-card">
-              <div class="social-icon" style="color:#4267B2;font-weight:700;">f</div>
-              <div class="social-name">Facebook</div>
-              <div class="social-handle" data-es="Página SCRAP" data-en="SCRAP Page">Página SCRAP</div>
-              <span class="social-badge sfw">SFW</span>
-              <p class="social-desc" data-es="Contenido apto para todo público." data-en="All-ages content.">Contenido apto para todo público.</p>
-            </a>
-          </div>
+        <p class="section-label" style="margin-top:2rem;" data-es="Redes" data-en="Socials">Redes</p>
+        <div class="links-row">
+          <a href="https://x.com/ScrapNSFW" target="_blank" rel="noopener" class="social-card">
+            <div class="social-icon">𝕏</div>
+            <div class="social-name">X / Twitter</div>
+            <div class="social-handle">@ScrapNSFW</div>
+            <span class="social-badge">NSFW</span>
+            <p class="social-desc" data-es="Ilustraciones, WIPs y actualizaciones." data-en="Illustrations, WIPs and updates.">Ilustraciones, WIPs y actualizaciones.</p>
+          </a>
+          <a href="https://facebook.com/TU_PAGINA_FB" target="_blank" rel="noopener" class="social-card">
+            <div class="social-icon" style="color:#4267B2;font-weight:700;">f</div>
+            <div class="social-name">Facebook</div>
+            <div class="social-handle" data-es="Página SCRAP" data-en="SCRAP Page">Página SCRAP</div>
+            <span class="social-badge sfw">SFW</span>
+            <p class="social-desc" data-es="Contenido apto para todo público." data-en="All-ages content.">Contenido apto para todo público.</p>
+          </a>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ═══════════ GALLERY TAB ═══════════ -->
+<!-- GALLERY -->
 <div class="tab-panel" id="tab-gallery">
   <div class="container section-pad">
     <p class="section-label" data-es="Ejemplos de trabajo" data-en="Work examples">Ejemplos de trabajo</p>
     <h2 class="section-title" data-es="GALERÍA" data-en="GALLERY">GALERÍA</h2>
-
     <div class="gallery-controls">
       <div class="filter-bar" id="filterBar">
         <button class="filter-btn active" onclick="filterGallery('all',this)" data-es="Todo" data-en="All">Todo</button>
         <button class="filter-btn" onclick="filterGallery('sketch',this)">Sketch</button>
-        <button class="filter-btn" onclick="filterGallery('colored-sketch',this)" data-es="Colored Sketch" data-en="Colored Sketch">Colored Sketch</button>
-        <button class="filter-btn" onclick="filterGallery('sketch-bg',this)" data-es="Sketch w/ BG" data-en="Sketch w/ BG">Sketch w/ BG</button>
-        <button class="filter-btn" onclick="filterGallery('flat-colored',this)" data-es="Flat Colored" data-en="Flat Colored">Flat Colored</button>
-        <button class="filter-btn" onclick="filterGallery('detailed-colored',this)" data-es="Detailed Colored" data-en="Detailed Colored">Detailed Colored</button>
+        <button class="filter-btn" onclick="filterGallery('colored-sketch',this)">Colored Sketch</button>
+        <button class="filter-btn" onclick="filterGallery('sketch-bg',this)">Sketch w/ BG</button>
+        <button class="filter-btn" onclick="filterGallery('flat-colored',this)">Flat Colored</button>
+        <button class="filter-btn" onclick="filterGallery('detailed-colored',this)">Detailed Colored</button>
         <button class="filter-btn" onclick="filterGallery('lineart',this)">Lineart</button>
-        <button class="filter-btn" onclick="filterGallery('colored-lineart',this)" data-es="Colored Lineart" data-en="Colored Lineart">Colored Lineart</button>
-        <button class="filter-btn" onclick="filterGallery('lineart-bg',this)" data-es="Lineart w/ BG" data-en="Lineart w/ BG">Lineart w/ BG</button>
-        <button class="filter-btn" onclick="filterGallery('full-render',this)" data-es="Full Render" data-en="Full Render">Full Render</button>
+        <button class="filter-btn" onclick="filterGallery('colored-lineart',this)">Colored Lineart</button>
+        <button class="filter-btn" onclick="filterGallery('lineart-bg',this)">Lineart w/ BG</button>
+        <button class="filter-btn" onclick="filterGallery('full-render',this)">Full Render</button>
       </div>
-
       <div class="nsfw-toggle">
         <button class="nsfw-btn active-sfw" id="btn-sfw" onclick="setNSFWMode('sfw')">SFW</button>
         <button class="nsfw-btn" id="btn-nsfw" onclick="setNSFWMode('nsfw')">NSFW</button>
         <button class="nsfw-btn" id="btn-all-mode" onclick="setNSFWMode('all')" data-es="TODOS" data-en="ALL">TODOS</button>
       </div>
     </div>
-
     <div class="gallery-grid" id="galleryGrid">
-
-      <!-- ══ EJEMPLO SFW — SKETCH ══
-           Para agregar tus imágenes reales:
-           1. Cambia <div class="gallery-placeholder">...</div> por <img src="ruta/imagen.jpg" alt="título">
-           2. Actualiza data-type con las etiquetas correspondientes
-           3. Cambia data-nsfw="false" por data-nsfw="true" para obras NSFW
-      -->
-
-      <div class="gallery-item visible" data-type="sketch" data-nsfw="false">
-        <div class="gallery-placeholder">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          <span data-es="Tu imagen aquí" data-en="Your image here">Tu imagen aquí</span>
-        </div>
-        <div class="gallery-item-overlay">
-          <div class="gallery-item-title">Cherry A.S.S.</div>
-          <div class="gallery-item-tags">
-            <span class="item-tag sketch">Sketch</span>
-            <span class="item-tag sfw-tag">SFW</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="gallery-item visible" data-type="colored-sketch" data-nsfw="false">
-        <div class="gallery-placeholder">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          <span data-es="Tu imagen aquí" data-en="Your image here">Tu imagen aquí</span>
-        </div>
-        <div class="gallery-item-overlay">
-          <div class="gallery-item-title">Cutie A.S.S.</div>
-          <div class="gallery-item-tags">
-            <span class="item-tag colored">Colored Sketch</span>
-            <span class="item-tag sfw-tag">SFW</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="gallery-item visible" data-type="lineart" data-nsfw="false">
-        <div class="gallery-placeholder">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          <span data-es="Tu imagen aquí" data-en="Your image here">Tu imagen aquí</span>
-        </div>
-        <div class="gallery-item-overlay">
-          <div class="gallery-item-title">Capitán Langley</div>
-          <div class="gallery-item-tags">
-            <span class="item-tag lineart">Lineart</span>
-            <span class="item-tag sfw-tag">SFW</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="gallery-item visible" data-type="colored-lineart" data-nsfw="true">
-        <div class="gallery-placeholder">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          <span data-es="Obra NSFW" data-en="NSFW work">Obra NSFW</span>
-        </div>
-        <div class="gallery-nsfw-lock">+18</div>
-        <div class="gallery-item-overlay">
-          <div class="gallery-item-title">Lizzy Succ</div>
-          <div class="gallery-item-tags">
-            <span class="item-tag colored">Colored Lineart</span>
-            <span class="item-tag nsfw-tag">NSFW</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="gallery-item visible" data-type="sketch-bg" data-nsfw="false">
-        <div class="gallery-placeholder">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          <span data-es="Tu imagen aquí" data-en="Your image here">Tu imagen aquí</span>
-        </div>
-        <div class="gallery-item-overlay">
-          <div class="gallery-item-title" data-es="Comisión — ejemplo" data-en="Commission — example">Comisión — ejemplo</div>
-          <div class="gallery-item-tags">
-            <span class="item-tag sketch">Sketch</span>
-            <span class="item-tag bg">w/ Background</span>
-            <span class="item-tag sfw-tag">SFW</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="gallery-item visible" data-type="full-render" data-nsfw="true">
-        <div class="gallery-placeholder">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          <span data-es="Obra NSFW" data-en="NSFW work">Obra NSFW</span>
-        </div>
-        <div class="gallery-nsfw-lock">+18</div>
-        <div class="gallery-item-overlay">
-          <div class="gallery-item-title">Cherry A.S.S.</div>
-          <div class="gallery-item-tags">
-            <span class="item-tag render">Full Render</span>
-            <span class="item-tag nsfw-tag">NSFW</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="gallery-item visible" data-type="flat-colored" data-nsfw="false">
-        <div class="gallery-placeholder">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          <span data-es="Tu imagen aquí" data-en="Your image here">Tu imagen aquí</span>
-        </div>
-        <div class="gallery-item-overlay">
-          <div class="gallery-item-title" data-es="Ejemplo" data-en="Example">Ejemplo</div>
-          <div class="gallery-item-tags">
-            <span class="item-tag colored">Flat Colored</span>
-            <span class="item-tag sfw-tag">SFW</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="gallery-item visible" data-type="detailed-colored" data-nsfw="true">
-        <div class="gallery-placeholder">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          <span data-es="Obra NSFW" data-en="NSFW work">Obra NSFW</span>
-        </div>
-        <div class="gallery-nsfw-lock">+18</div>
-        <div class="gallery-item-overlay">
-          <div class="gallery-item-title">Lizzy Succ</div>
-          <div class="gallery-item-tags">
-            <span class="item-tag colored">Detailed Colored</span>
-            <span class="item-tag nsfw-tag">NSFW</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="gallery-empty" id="galleryEmpty" data-es="// Sin resultados para este filtro" data-en="// No results for this filter">// Sin resultados para este filtro</div>
+      <div class="gallery-loading" data-es="// Cargando galería…" data-en="// Loading gallery…">// Cargando galería…</div>
     </div>
-
-    <p style="font-size:10px;color:var(--dust);margin-top:1.5rem;letter-spacing:0.15em;" data-es="// Para agregar tus imágenes: reemplaza los bloques gallery-placeholder con &lt;img src='ruta'&gt; en el HTML" data-en="// To add your images: replace gallery-placeholder blocks with &lt;img src='path'&gt; in the HTML">// Para agregar tus imágenes: reemplaza los bloques gallery-placeholder con &lt;img src='ruta'&gt; en el HTML</p>
+    <p style="font-size:10px;color:var(--dust);margin-top:1.5rem;letter-spacing:0.12em;" data-es="// Para agregar obras: edita galeria.json y sube tus imágenes a la carpeta /images/" data-en="// To add artwork: edit galeria.json and upload your images to the /images/ folder">// Para agregar obras: edita galeria.json y sube tus imágenes a la carpeta /images/</p>
   </div>
 </div>
 
-<!-- ═══════════ COMMISSIONS TAB ═══════════ -->
+<!-- COMMISSIONS -->
 <div class="tab-panel" id="tab-commissions">
   <div class="container section-pad">
     <p class="section-label" data-es="Servicios" data-en="Services">Servicios</p>
     <h2 class="section-title" data-es="COMISIONES" data-en="COMMISSIONS">COMISIONES</h2>
-
     <div class="commission-layout">
-
-      <!-- LEFT: PRICES + TOS -->
       <div>
-        <div class="cat-header" data-es="// SKETCH" data-en="// SKETCH">// SKETCH</div>
+        <div class="cat-header">// SKETCH</div>
         <div class="price-table">
-          <div class="price-row">
-            <span class="price-num">$6</span>
-            <div>
-              <div class="price-type" data-es="Sketch — Sin color" data-en="Sketch — No color">Sketch — Sin color</div>
-              <div class="price-desc" data-es="Línea suelta, 1 personaje" data-en="Loose linework, 1 character">Línea suelta, 1 personaje</div>
-            </div>
-            <span class="price-status open" data-es="Abierto" data-en="Open">Abierto</span>
-          </div>
-          <div class="price-row">
-            <span class="price-num">$10</span>
-            <div>
-              <div class="price-type" data-es="Colored Sketch — Flat" data-en="Colored Sketch — Flat">Colored Sketch — Flat</div>
-              <div class="price-desc" data-es="Línea suelta + colores planos, 1 personaje" data-en="Loose linework + flat colors, 1 character">Línea suelta + colores planos, 1 personaje</div>
-            </div>
-            <span class="price-status open" data-es="Abierto" data-en="Open">Abierto</span>
-          </div>
-          <div class="price-row">
-            <span class="price-num">$14</span>
-            <div>
-              <div class="price-type" data-es="Colored Sketch — Detailed" data-en="Colored Sketch — Detailed">Colored Sketch — Detailed</div>
-              <div class="price-desc" data-es="Línea suelta + color detallado, 1 personaje" data-en="Loose linework + detailed color, 1 character">Línea suelta + color detallado, 1 personaje</div>
-            </div>
-            <span class="price-status open" data-es="Abierto" data-en="Open">Abierto</span>
-          </div>
-          <div class="price-row">
-            <span class="price-num">$18</span>
-            <div>
-              <div class="price-type" data-es="Sketch w/ Background" data-en="Sketch w/ Background">Sketch w/ Background</div>
-              <div class="price-desc" data-es="Sketch con fondo incluido, 1 personaje" data-en="Sketch with background included, 1 character">Sketch con fondo incluido, 1 personaje</div>
-            </div>
-            <span class="price-status open" data-es="Abierto" data-en="Open">Abierto</span>
-          </div>
+          <div class="price-row"><span class="price-num">$6</span><div><div class="price-type" data-es="Sketch — Sin color" data-en="Sketch — No color">Sketch — Sin color</div><div class="price-desc" data-es="Línea suelta, 1 personaje" data-en="Loose linework, 1 character">Línea suelta, 1 personaje</div></div><span class="price-status open" data-es="Abierto" data-en="Open">Abierto</span></div>
+          <div class="price-row"><span class="price-num">$10</span><div><div class="price-type">Colored Sketch — Flat</div><div class="price-desc" data-es="Línea suelta + colores planos, 1 personaje" data-en="Loose linework + flat colors, 1 character">Línea suelta + colores planos, 1 personaje</div></div><span class="price-status open" data-es="Abierto" data-en="Open">Abierto</span></div>
+          <div class="price-row"><span class="price-num">$14</span><div><div class="price-type">Colored Sketch — Detailed</div><div class="price-desc" data-es="Línea suelta + color detallado, 1 personaje" data-en="Loose linework + detailed color, 1 character">Línea suelta + color detallado, 1 personaje</div></div><span class="price-status open" data-es="Abierto" data-en="Open">Abierto</span></div>
+          <div class="price-row"><span class="price-num">$18</span><div><div class="price-type">Sketch w/ Background</div><div class="price-desc" data-es="Sketch con fondo incluido, 1 personaje" data-en="Sketch with background, 1 character">Sketch con fondo incluido, 1 personaje</div></div><span class="price-status open" data-es="Abierto" data-en="Open">Abierto</span></div>
         </div>
-
-        <div class="cat-header" data-es="// LINEART" data-en="// LINEART">// LINEART</div>
+        <div class="cat-header">// LINEART</div>
         <div class="price-table">
-          <div class="price-row">
-            <span class="price-num">$18</span>
-            <div>
-              <div class="price-type" data-es="Lineart — Sin color" data-en="Lineart — No color">Lineart — Sin color</div>
-              <div class="price-desc" data-es="Línea limpia y definida, 1 personaje" data-en="Clean defined linework, 1 character">Línea limpia y definida, 1 personaje</div>
-            </div>
-            <span class="price-status open" data-es="Abierto" data-en="Open">Abierto</span>
-          </div>
-          <div class="price-row">
-            <span class="price-num">$23</span>
-            <div>
-              <div class="price-type" data-es="Lineart — Flat Colored" data-en="Lineart — Flat Colored">Lineart — Flat Colored</div>
-              <div class="price-desc" data-es="Línea limpia + colores planos, 1 personaje" data-en="Clean linework + flat colors, 1 character">Línea limpia + colores planos, 1 personaje</div>
-            </div>
-            <span class="price-status open" data-es="Abierto" data-en="Open">Abierto</span>
-          </div>
-          <div class="price-row">
-            <span class="price-num">$28</span>
-            <div>
-              <div class="price-type" data-es="Lineart — Detailed Colored" data-en="Lineart — Detailed Colored">Lineart — Detailed Colored</div>
-              <div class="price-desc" data-es="Línea limpia + color detallado, 1 personaje" data-en="Clean linework + detailed color, 1 character">Línea limpia + color detallado, 1 personaje</div>
-            </div>
-            <span class="price-status open" data-es="Abierto" data-en="Open">Abierto</span>
-          </div>
-          <div class="price-row">
-            <span class="price-num">$35</span>
-            <div>
-              <div class="price-type" data-es="Lineart w/ BG — Full Render" data-en="Lineart w/ BG — Full Render">Lineart w/ BG — Full Render</div>
-              <div class="price-desc" data-es="Línea + color + sombras + fondo completo, 1 personaje" data-en="Linework + color + shading + full background, 1 character">Línea + color + sombras + fondo completo, 1 personaje</div>
-            </div>
-            <span class="price-status open" data-es="Abierto" data-en="Open">Abierto</span>
-          </div>
+          <div class="price-row"><span class="price-num">$18</span><div><div class="price-type" data-es="Lineart — Sin color" data-en="Lineart — No color">Lineart — Sin color</div><div class="price-desc" data-es="Línea limpia y definida, 1 personaje" data-en="Clean defined linework, 1 character">Línea limpia y definida, 1 personaje</div></div><span class="price-status open" data-es="Abierto" data-en="Open">Abierto</span></div>
+          <div class="price-row"><span class="price-num">$23</span><div><div class="price-type">Lineart — Flat Colored</div><div class="price-desc" data-es="Línea limpia + colores planos, 1 personaje" data-en="Clean linework + flat colors, 1 character">Línea limpia + colores planos, 1 personaje</div></div><span class="price-status open" data-es="Abierto" data-en="Open">Abierto</span></div>
+          <div class="price-row"><span class="price-num">$28</span><div><div class="price-type">Lineart — Detailed Colored</div><div class="price-desc" data-es="Línea limpia + color detallado, 1 personaje" data-en="Clean linework + detailed color, 1 character">Línea limpia + color detallado, 1 personaje</div></div><span class="price-status open" data-es="Abierto" data-en="Open">Abierto</span></div>
+          <div class="price-row"><span class="price-num">$35</span><div><div class="price-type">Lineart w/ BG — Full Render</div><div class="price-desc" data-es="Línea + color + sombras + fondo, 1 personaje" data-en="Linework + color + shading + background, 1 character">Línea + color + sombras + fondo, 1 personaje</div></div><span class="price-status open" data-es="Abierto" data-en="Open">Abierto</span></div>
         </div>
-
-        <div class="cat-header" data-es="// EXTRAS" data-en="// EXTRAS">// EXTRAS</div>
+        <div class="cat-header">// EXTRAS</div>
         <div class="price-table">
-          <div class="price-row">
-            <span class="price-num">+$5</span>
-            <div>
-              <div class="price-type" data-es="Fondo simple" data-en="Simple background">Fondo simple</div>
-              <div class="price-desc" data-es="Color sólido, gradiente o elementos simples" data-en="Solid color, gradient or simple elements">Color sólido, gradiente o elementos simples</div>
-            </div>
-            <span class="price-status open" data-es="Abierto" data-en="Open">Abierto</span>
-          </div>
-          <div class="price-row">
-            <span class="price-num">+$15</span>
-            <div>
-              <div class="price-type" data-es="Fondo detallado" data-en="Detailed background">Fondo detallado</div>
-              <div class="price-desc" data-es="Escenario o composición compleja" data-en="Scene or complex composition">Escenario o composición compleja</div>
-            </div>
-            <span class="price-status open" data-es="Abierto" data-en="Open">Abierto</span>
-          </div>
-          <div class="price-row">
-            <span class="price-num">+40%</span>
-            <div>
-              <div class="price-type" data-es="Personaje adicional" data-en="Additional character">Personaje adicional</div>
-              <div class="price-desc" data-es="Por cada personaje extra sobre el precio base" data-en="Per extra character over base price">Por cada personaje extra sobre el precio base</div>
-            </div>
-            <span class="price-status open" data-es="Abierto" data-en="Open">Abierto</span>
-          </div>
-          <div class="price-row">
-            <span class="price-num">????</span>
-            <div>
-              <div class="price-type" data-es="Solicitud especial" data-en="Special request">Solicitud especial</div>
-              <div class="price-desc" data-es="Formato fuera de lo estándar — precio por consulta" data-en="Non-standard format — price on request">Formato fuera de lo estándar — precio por consulta</div>
-            </div>
-            <span class="price-status consult" data-es="Consultar" data-en="Inquire">Consultar</span>
-          </div>
+          <div class="price-row"><span class="price-num">+$5</span><div><div class="price-type" data-es="Fondo simple" data-en="Simple background">Fondo simple</div><div class="price-desc" data-es="Color sólido o gradiente" data-en="Solid color or gradient">Color sólido o gradiente</div></div><span class="price-status open" data-es="Abierto" data-en="Open">Abierto</span></div>
+          <div class="price-row"><span class="price-num">+$15</span><div><div class="price-type" data-es="Fondo detallado" data-en="Detailed background">Fondo detallado</div><div class="price-desc" data-es="Escenario o composición compleja" data-en="Scene or complex composition">Escenario o composición compleja</div></div><span class="price-status open" data-es="Abierto" data-en="Open">Abierto</span></div>
+          <div class="price-row"><span class="price-num">+40%</span><div><div class="price-type" data-es="Personaje adicional" data-en="Additional character">Personaje adicional</div><div class="price-desc" data-es="Por cada personaje extra" data-en="Per extra character">Por cada personaje extra</div></div><span class="price-status open" data-es="Abierto" data-en="Open">Abierto</span></div>
+          <div class="price-row"><span class="price-num">????</span><div><div class="price-type" data-es="Solicitud especial" data-en="Special request">Solicitud especial</div><div class="price-desc" data-es="Precio por consulta" data-en="Price on request">Precio por consulta</div></div><span class="price-status consult" data-es="Consultar" data-en="Inquire">Consultar</span></div>
         </div>
-
         <div class="discount-section">
-          <div class="discount-row">
-            <div class="disc-label" data-es="Pack 3 ilustraciones" data-en="Pack of 3 illustrations">Pack 3 ilustraciones</div>
-            <div class="disc-val">10% OFF</div>
-          </div>
-          <div class="discount-row">
-            <div class="disc-label" data-es="Pack 5+ ilustraciones" data-en="Pack of 5+ illustrations">Pack 5+ ilustraciones</div>
-            <div class="disc-val">15% OFF</div>
-          </div>
-          <div class="discount-row">
-            <div class="disc-label" data-es="Personaje recurrente (3ra comisión o más)" data-en="Recurring character (3rd commission onward)">Personaje recurrente (3ra comisión o más)</div>
-            <div class="disc-val">5% OFF</div>
-          </div>
+          <div class="discount-row"><div class="disc-label" data-es="Pack 3 ilustraciones" data-en="Pack of 3 illustrations">Pack 3 ilustraciones</div><div class="disc-val">10% OFF</div></div>
+          <div class="discount-row"><div class="disc-label" data-es="Pack 5+ ilustraciones" data-en="Pack of 5+ illustrations">Pack 5+ ilustraciones</div><div class="disc-val">15% OFF</div></div>
+          <div class="discount-row"><div class="disc-label" data-es="Personaje recurrente (3ra comisión o más)" data-en="Recurring character (3rd commission onward)">Personaje recurrente (3ra comisión o más)</div><div class="disc-val">5% OFF</div></div>
         </div>
-
         <div class="tos-box">
           <h3 data-es="TÉRMINOS DE SERVICIO" data-en="TERMS OF SERVICE">TÉRMINOS DE SERVICIO</h3>
           <ul>
-            <li data-es="Pago 100% por adelantado antes de iniciar cualquier trabajo" data-en="100% full payment required before work begins">Pago 100% por adelantado antes de iniciar cualquier trabajo</li>
+            <li data-es="Pago 100% por adelantado antes de iniciar" data-en="100% payment required before work begins">Pago 100% por adelantado antes de iniciar</li>
             <li data-es="No se aceptan reembolsos una vez iniciado el proceso" data-en="No refunds once work has started">No se aceptan reembolsos una vez iniciado el proceso</li>
             <li data-es="Acepto OCs, personajes de ficción (+18) y fanart" data-en="I accept OCs, fictional characters (+18), and fanart">Acepto OCs, personajes de ficción (+18) y fanart</li>
-            <li data-es="Me reservo el derecho de rechazar cualquier solicitud, sin necesidad de justificación" data-en="I reserve the right to decline any request without explanation">Me reservo el derecho de rechazar cualquier solicitud, sin necesidad de justificación</li>
-            <li data-es="Tiempo de entrega variable según carga — se informa al confirmar la comisión" data-en="Delivery time varies by workload — communicated upon confirmation">Tiempo de entrega variable según carga — se informa al confirmar la comisión</li>
+            <li data-es="Me reservo el derecho de rechazar cualquier solicitud sin justificación" data-en="I reserve the right to decline any request without explanation">Me reservo el derecho de rechazar cualquier solicitud sin justificación</li>
+            <li data-es="Tiempo de entrega variable — se informa al confirmar la comisión" data-en="Delivery time varies — communicated upon confirmation">Tiempo de entrega variable — se informa al confirmar la comisión</li>
             <li data-es="Se envía WIP para aprobación antes de finalizar" data-en="WIP preview sent for approval before finishing">Se envía WIP para aprobación antes de finalizar</li>
-            <li data-es="Formas de pago: Ko-fi (preferido) · PayPal (alternativa)" data-en="Payment: Ko-fi (preferred) · PayPal (alternative)">Formas de pago: Ko-fi (preferido) · PayPal (alternativa)</li>
+            <li data-es="Pago: Ko-fi (preferido) · PayPal (alternativa)" data-en="Payment: Ko-fi (preferred) · PayPal (alternative)">Pago: Ko-fi (preferido) · PayPal (alternativa)</li>
             <li class="commercial" data-es="Uso personal: incluido en el precio base" data-en="Personal use: included in base price">Uso personal: incluido en el precio base</li>
-            <li class="commercial" data-es="Uso comercial (venta, merch, monetización): +50% sobre el precio base" data-en="Commercial use (sale, merch, monetization): +50% over base price">Uso comercial: +50% sobre el precio base</li>
-            <li class="commercial" data-es="SCRAP se reserva el derecho de mostrar la obra en portafolio salvo acuerdo previo" data-en="SCRAP reserves the right to display the work in portfolio unless agreed otherwise">SCRAP se reserva el derecho de mostrar la obra en portafolio</li>
+            <li class="commercial" data-es="Uso comercial: +50% sobre el precio base" data-en="Commercial use: +50% over base price">Uso comercial: +50% sobre el precio base</li>
+            <li class="commercial" data-es="SCRAP se reserva el derecho de mostrar la obra en portafolio" data-en="SCRAP reserves the right to display the work in portfolio">SCRAP se reserva el derecho de mostrar la obra en portafolio</li>
           </ul>
         </div>
       </div>
 
-      <!-- RIGHT: FORM -->
       <div>
         <h3 class="form-title" data-es="SOLICITAR COMISIÓN" data-en="REQUEST A COMMISSION">SOLICITAR COMISIÓN</h3>
-
         <form class="commission-form" id="commissionForm" onsubmit="handleSubmit(event)">
-          <input type="hidden" name="_to" value="ScrapNSFW@gmail.com">
-
           <div class="form-group">
-            <label class="form-label" for="nombre" data-es="Nombre / Alias" data-en="Name / Handle">Nombre / Alias</label>
-            <input class="form-input" type="text" id="nombre" name="nombre" placeholder="@tuhandle" required>
+            <label class="form-label" data-es="Nombre / Alias" data-en="Name / Handle">Nombre / Alias</label>
+            <input class="form-input" type="text" name="nombre" placeholder="@tuhandle" required>
           </div>
-
           <div class="form-group">
-            <label class="form-label" for="correo" data-es="Tu correo electrónico" data-en="Your email address">Tu correo electrónico</label>
-            <input class="form-input" type="email" id="correo" name="email" placeholder="tu@email.com" required>
+            <label class="form-label" data-es="Tu correo electrónico" data-en="Your email address">Tu correo electrónico</label>
+            <input class="form-input" type="email" name="email" placeholder="tu@email.com" required>
           </div>
-
           <div class="form-group">
-            <label class="form-label" for="tipo" data-es="Tipo de comisión" data-en="Commission type">Tipo de comisión</label>
-            <select class="form-select" id="tipo" name="tipo" required>
+            <label class="form-label" data-es="Tipo de comisión" data-en="Commission type">Tipo de comisión</label>
+            <select class="form-select" name="tipo" required>
               <option value="" data-es="— Selecciona —" data-en="— Select —">— Selecciona —</option>
-              <optgroup label="— SKETCH —">
-                <option value="sketch-bw" data-es="Sketch sin color — $6 USD" data-en="Sketch no color — $6 USD">Sketch sin color — $6 USD</option>
-                <option value="colored-sketch-flat" data-es="Colored Sketch Flat — $10 USD" data-en="Colored Sketch Flat — $10 USD">Colored Sketch Flat — $10 USD</option>
-                <option value="colored-sketch-detailed" data-es="Colored Sketch Detailed — $14 USD" data-en="Colored Sketch Detailed — $14 USD">Colored Sketch Detailed — $14 USD</option>
-                <option value="sketch-bg" data-es="Sketch w/ Background — $18 USD" data-en="Sketch w/ Background — $18 USD">Sketch w/ Background — $18 USD</option>
+              <optgroup label="SKETCH">
+                <option value="sketch-bw" data-es="Sketch sin color — $6" data-en="Sketch no color — $6">Sketch sin color — $6</option>
+                <option value="colored-sketch-flat" data-es="Colored Sketch Flat — $10" data-en="Colored Sketch Flat — $10">Colored Sketch Flat — $10</option>
+                <option value="colored-sketch-detailed" data-es="Colored Sketch Detailed — $14" data-en="Colored Sketch Detailed — $14">Colored Sketch Detailed — $14</option>
+                <option value="sketch-bg" data-es="Sketch w/ Background — $18" data-en="Sketch w/ Background — $18">Sketch w/ Background — $18</option>
               </optgroup>
-              <optgroup label="— LINEART —">
-                <option value="lineart-bw" data-es="Lineart sin color — $18 USD" data-en="Lineart no color — $18 USD">Lineart sin color — $18 USD</option>
-                <option value="lineart-flat" data-es="Lineart Flat Colored — $23 USD" data-en="Lineart Flat Colored — $23 USD">Lineart Flat Colored — $23 USD</option>
-                <option value="lineart-detailed" data-es="Lineart Detailed Colored — $28 USD" data-en="Lineart Detailed Colored — $28 USD">Lineart Detailed Colored — $28 USD</option>
-                <option value="lineart-fullrender" data-es="Lineart Full Render w/ BG — $35 USD" data-en="Lineart Full Render w/ BG — $35 USD">Lineart Full Render w/ BG — $35 USD</option>
+              <optgroup label="LINEART">
+                <option value="lineart-bw" data-es="Lineart sin color — $18" data-en="Lineart no color — $18">Lineart sin color — $18</option>
+                <option value="lineart-flat" data-es="Lineart Flat Colored — $23" data-en="Lineart Flat Colored — $23">Lineart Flat Colored — $23</option>
+                <option value="lineart-detailed" data-es="Lineart Detailed Colored — $28" data-en="Lineart Detailed Colored — $28">Lineart Detailed Colored — $28</option>
+                <option value="lineart-render" data-es="Lineart Full Render w/ BG — $35" data-en="Lineart Full Render w/ BG — $35">Lineart Full Render w/ BG — $35</option>
               </optgroup>
               <option value="especial" data-es="Solicitud especial — consultar" data-en="Special request — inquire">Solicitud especial — consultar</option>
             </select>
           </div>
-
           <div class="form-group">
-            <label class="form-label" for="personajes" data-es="Cantidad de personajes" data-en="Number of characters">Cantidad de personajes</label>
-            <select class="form-select" id="personajes" name="personajes">
+            <label class="form-label" data-es="Personajes" data-en="Characters">Personajes</label>
+            <select class="form-select" name="personajes">
               <option value="1">1</option>
               <option value="2" data-es="2 (+40%)" data-en="2 (+40%)">2 (+40%)</option>
               <option value="3" data-es="3 (+80%)" data-en="3 (+80%)">3 (+80%)</option>
             </select>
           </div>
-
           <div class="form-group">
-            <label class="form-label" for="cantidad" data-es="Cantidad de ilustraciones" data-en="Number of illustrations">Cantidad de ilustraciones</label>
-            <select class="form-select" id="cantidad" name="cantidad">
+            <label class="form-label" data-es="Cantidad de ilustraciones" data-en="Number of illustrations">Cantidad de ilustraciones</label>
+            <select class="form-select" name="cantidad">
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3" data-es="3 — 10% descuento" data-en="3 — 10% off">3 — 10% descuento</option>
               <option value="5+" data-es="5 o más — 15% descuento" data-en="5 or more — 15% off">5 o más — 15% descuento</option>
             </select>
           </div>
-
           <div class="form-group">
-            <label class="form-label" for="uso" data-es="Uso previsto" data-en="Intended use">Uso previsto</label>
-            <select class="form-select" id="uso" name="uso">
-              <option value="personal" data-es="Personal — uso propio, no comercial" data-en="Personal — own use, non-commercial">Personal — uso propio, no comercial</option>
-              <option value="comercial" data-es="Comercial — +50% (merch, venta, publicidad)" data-en="Commercial — +50% (merch, sale, advertising)">Comercial — +50% (merch, venta, publicidad)</option>
+            <label class="form-label" data-es="Uso previsto" data-en="Intended use">Uso previsto</label>
+            <select class="form-select" name="uso">
+              <option value="personal" data-es="Personal — no comercial" data-en="Personal — non-commercial">Personal — no comercial</option>
+              <option value="comercial" data-es="Comercial — +50%" data-en="Commercial — +50%">Comercial — +50%</option>
             </select>
           </div>
-
           <div class="form-group">
-            <label class="form-label" for="contenido" data-es="Tipo de contenido" data-en="Content type">Tipo de contenido</label>
-            <select class="form-select" id="contenido" name="contenido">
-              <option value="sfw" data-es="SFW — apto para todo público" data-en="SFW — all audiences">SFW — apto para todo público</option>
-              <option value="nsfw" data-es="NSFW — contenido adulto (+18), confirmo ser mayor de edad" data-en="NSFW — adult content (+18), I confirm I am of legal age">NSFW — contenido adulto (+18)</option>
+            <label class="form-label" data-es="Tipo de contenido" data-en="Content type">Tipo de contenido</label>
+            <select class="form-select" name="contenido">
+              <option value="sfw">SFW</option>
+              <option value="nsfw" data-es="NSFW +18 — confirmo ser mayor de edad" data-en="NSFW +18 — I confirm I am of legal age">NSFW +18 — confirmo ser mayor de edad</option>
             </select>
           </div>
-
           <div class="form-group">
-            <label class="form-label" for="descripcion" data-es="Descripción del personaje / idea" data-en="Character / idea description">Descripción del personaje / idea</label>
-            <textarea class="form-textarea" id="descripcion" name="descripcion"
+            <label class="form-label" data-es="Descripción del personaje / idea" data-en="Character / idea description">Descripción del personaje / idea</label>
+            <textarea class="form-textarea" name="descripcion"
               data-placeholder-es="Descríbeme el personaje, la pose, situación, expresión, ropa, referencias si tienes…"
               data-placeholder-en="Describe the character, pose, situation, expression, outfit, references if you have them…"
               placeholder="Descríbeme el personaje, la pose, situación, expresión, ropa, referencias si tienes…"
               required></textarea>
           </div>
-
           <div class="form-group">
-            <label class="form-label" for="refs" data-es="Referencias / Links (opcional)" data-en="References / Links (optional)">Referencias / Links (opcional)</label>
-            <input class="form-input" type="text" id="refs" name="referencias"
+            <label class="form-label" data-es="Referencias / Links (opcional)" data-en="References / Links (optional)">Referencias / Links (opcional)</label>
+            <input class="form-input" type="text" name="referencias"
               data-placeholder-es="Links a imágenes, redes, character sheets…"
               data-placeholder-en="Image links, social profiles, character sheets…"
               placeholder="Links a imágenes, redes, character sheets…">
           </div>
-
           <button type="submit" class="form-submit" id="submitBtn" data-es="ENVIAR SOLICITUD →" data-en="SEND REQUEST →">ENVIAR SOLICITUD →</button>
-
-          <div class="form-success" id="formSuccess">
-            <span data-es="✓ Solicitud enviada. Respondo en menos de 48 horas." data-en="✓ Request sent. I reply within 48 hours.">✓ Solicitud enviada. Respondo en menos de 48 horas.</span>
-          </div>
-
           <p class="form-note" data-es="El envío no garantiza disponibilidad. Pago completo requerido antes de iniciar. Respondo en menos de 48 horas." data-en="Submission does not guarantee availability. Full payment required before work begins. I reply within 48 hours.">El envío no garantiza disponibilidad. Pago completo requerido antes de iniciar. Respondo en menos de 48 horas.</p>
         </form>
       </div>
@@ -1288,7 +597,6 @@
   </div>
 </div>
 
-<!-- ═══════════ FOOTER ═══════════ -->
 <footer>
   <div>
     <div class="footer-logo">SCR<span>A</span>P</div>
@@ -1299,134 +607,163 @@
 </footer>
 
 <script>
-  /* ═══ LANGUAGE SYSTEM ═══ */
   let currentLang = 'es';
+  let currentFilter = 'all';
+  let currentNSFWMode = 'sfw';
+  let galleryData = [];
 
+  /* ═══ LANGUAGE ═══ */
   function setLang(lang) {
     currentLang = lang;
-
     const gate = document.getElementById('lang-gate');
     gate.style.opacity = '0';
     gate.style.transition = 'opacity 0.4s';
     setTimeout(() => { gate.style.display = 'none'; }, 400);
     document.body.classList.remove('lang-locked');
     document.getElementById('langSwitcher').style.display = 'flex';
-
     document.getElementById('btn-es').classList.toggle('active', lang === 'es');
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-
     document.querySelectorAll('[data-es][data-en]').forEach(el => {
       const text = el.getAttribute('data-' + lang);
       if (!text) return;
-      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-        el.placeholder = text;
-      } else if (el.tagName === 'OPTION') {
-        el.textContent = text;
-      } else if (el.tagName === 'BUTTON') {
-        el.textContent = text;
-      } else {
-        el.innerHTML = text;
-      }
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.placeholder = text;
+      else if (el.tagName === 'OPTION') el.textContent = text;
+      else if (el.tagName === 'BUTTON') el.textContent = text;
+      else el.innerHTML = text;
     });
-
-    // placeholder especial para textarea y inputs con data-placeholder
     document.querySelectorAll('[data-placeholder-es][data-placeholder-en]').forEach(el => {
       el.placeholder = el.getAttribute('data-placeholder-' + lang);
     });
-
     document.documentElement.lang = lang;
   }
 
-  /* ═══ TAB SYSTEM ═══ */
+  /* ═══ TABS ═══ */
   function switchTab(tabId, btn) {
     document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.tab-nav button').forEach(b => b.classList.remove('active'));
     document.getElementById('tab-' + tabId).classList.add('active');
     btn.classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (tabId === 'gallery' && galleryData.length === 0) loadGallery();
   }
 
-  /* ═══ GALLERY FILTER ═══ */
-  let currentFilter = 'all';
-  let currentNSFWMode = 'sfw';
+  /* ═══ GALLERY — carga desde galeria.json ═══ */
+  const TYPE_TAGS = {
+    'sketch':           { label: 'Sketch',           cls: 'sketch' },
+    'colored-sketch':   { label: 'Colored Sketch',   cls: 'colored' },
+    'sketch-bg':        { label: 'Sketch w/ BG',      cls: 'bg' },
+    'flat-colored':     { label: 'Flat Colored',      cls: 'colored' },
+    'detailed-colored': { label: 'Detailed Colored',  cls: 'colored' },
+    'lineart':          { label: 'Lineart',           cls: 'lineart' },
+    'colored-lineart':  { label: 'Colored Lineart',   cls: 'colored' },
+    'lineart-bg':       { label: 'Lineart w/ BG',     cls: 'bg' },
+    'full-render':      { label: 'Full Render',       cls: 'render' }
+  };
+
+  async function loadGallery() {
+    const grid = document.getElementById('galleryGrid');
+    try {
+      const res = await fetch('galeria.json');
+      if (!res.ok) throw new Error('no file');
+      galleryData = await res.json();
+      renderGallery();
+    } catch(e) {
+      grid.innerHTML = '<div class="gallery-empty" style="display:block" data-es="// galeria.json no encontrado — sube el archivo a la carpeta del sitio" data-en="// galeria.json not found — upload the file to your site folder">// galeria.json no encontrado — sube el archivo a la carpeta del sitio</div>';
+    }
+  }
+
+  function renderGallery() {
+    const grid = document.getElementById('galleryGrid');
+    grid.innerHTML = '';
+
+    let visible = 0;
+    galleryData.forEach(item => {
+      const typeMatch = currentFilter === 'all' || item.tipo === currentFilter;
+      const nsfwMatch = currentNSFWMode === 'all' ||
+        (currentNSFWMode === 'sfw' && !item.nsfw) ||
+        (currentNSFWMode === 'nsfw' && item.nsfw);
+
+      const div = document.createElement('div');
+      div.className = 'gallery-item' + (typeMatch && nsfwMatch ? ' visible' : '');
+      div.style.display = typeMatch && nsfwMatch ? '' : 'none';
+      if (typeMatch && nsfwMatch) visible++;
+
+      const typeInfo = TYPE_TAGS[item.tipo] || { label: item.tipo, cls: 'sketch' };
+      const nsfwLabel = item.nsfw
+        ? '<span class="item-tag nsfw-tag">NSFW</span>'
+        : '<span class="item-tag sfw-tag">SFW</span>';
+      const nsfwBadge = item.nsfw ? '<div class="gallery-nsfw-lock">+18</div>' : '';
+
+      div.innerHTML = `
+        <img src="images/${item.archivo}" alt="${item.titulo}"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none;position:absolute;inset:0;">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>${item.titulo}</span>
+        </div>
+        ${nsfwBadge}
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-title">${item.titulo}</div>
+          <div class="gallery-item-tags">
+            <span class="item-tag ${typeInfo.cls}">${typeInfo.label}</span>
+            ${nsfwLabel}
+          </div>
+        </div>`;
+      grid.appendChild(div);
+    });
+
+    if (visible === 0) {
+      const empty = document.createElement('div');
+      empty.className = 'gallery-empty';
+      empty.style.display = 'block';
+      empty.textContent = currentLang === 'es' ? '// Sin resultados para este filtro' : '// No results for this filter';
+      grid.appendChild(empty);
+    }
+  }
 
   function filterGallery(cat, btn) {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     currentFilter = cat;
-    applyGalleryFilter();
+    if (galleryData.length > 0) renderGallery();
   }
 
   function setNSFWMode(mode) {
     currentNSFWMode = mode;
     document.getElementById('btn-sfw').className = 'nsfw-btn' + (mode === 'sfw' ? ' active-sfw' : '');
     document.getElementById('btn-nsfw').className = 'nsfw-btn' + (mode === 'nsfw' ? ' active-nsfw' : '');
-    document.getElementById('btn-all-mode').className = 'nsfw-btn' + (mode === 'all' ? ' active-sfw' : '');
-    applyGalleryFilter();
+    document.getElementById('btn-all-mode').className = 'nsfw-btn' + (mode === 'all' ? ' active-all' : '');
+    if (galleryData.length > 0) renderGallery();
   }
 
-  function applyGalleryFilter() {
-    const items = document.querySelectorAll('.gallery-item');
-    let visible = 0;
-
-    items.forEach(item => {
-      if (item.id === 'galleryEmpty') return;
-      const type = item.dataset.type || '';
-      const isNsfw = item.dataset.nsfw === 'true';
-
-      const typeMatch = currentFilter === 'all' || type === currentFilter;
-      const nsfwMatch = currentNSFWMode === 'all' ||
-        (currentNSFWMode === 'sfw' && !isNsfw) ||
-        (currentNSFWMode === 'nsfw' && isNsfw);
-
-      if (typeMatch && nsfwMatch) {
-        item.classList.add('visible');
-        item.style.display = '';
-        visible++;
-      } else {
-        item.classList.remove('visible');
-        item.style.display = 'none';
-      }
-    });
-
-    const empty = document.getElementById('galleryEmpty');
-    if (empty) empty.style.display = visible === 0 ? 'block' : 'none';
-  }
-
-  /* ═══ FORM SUBMIT ═══ */
+  /* ═══ FORM ═══ */
   function handleSubmit(e) {
     e.preventDefault();
-    const form = e.target;
+    const data = new FormData(e.target);
     const btn = document.getElementById('submitBtn');
-    const success = document.getElementById('formSuccess');
-
-    const data = new FormData(form);
     const body = [
       'SOLICITUD DE COMISIÓN — SCRAP',
       '================================',
-      'Nombre/Alias: ' + (data.get('nombre') || ''),
-      'Email cliente: ' + (data.get('email') || ''),
-      'Tipo: ' + (data.get('tipo') || ''),
-      'Personajes: ' + (data.get('personajes') || ''),
-      'Cantidad: ' + (data.get('cantidad') || ''),
-      'Uso: ' + (data.get('uso') || ''),
-      'Contenido: ' + (data.get('contenido') || ''),
+      'Nombre/Alias: '   + (data.get('nombre') || ''),
+      'Email cliente: '  + (data.get('email') || ''),
+      'Tipo: '           + (data.get('tipo') || ''),
+      'Personajes: '     + (data.get('personajes') || ''),
+      'Cantidad: '       + (data.get('cantidad') || ''),
+      'Uso: '            + (data.get('uso') || ''),
+      'Contenido: '      + (data.get('contenido') || ''),
       '--------------------------------',
       'Descripción:',
       data.get('descripcion') || '',
       '--------------------------------',
-      'Referencias: ' + (data.get('referencias') || 'N/A'),
+      'Referencias: '    + (data.get('referencias') || 'N/A'),
     ].join('\n');
 
-    const mailto = 'mailto:ScrapNSFW@gmail.com'
-      + '?subject=' + encodeURIComponent('[SCRAP] Solicitud de comisión — ' + (data.get('nombre') || ''))
-      + '&body=' + encodeURIComponent(body);
-
-    window.location.href = mailto;
+    window.location.href = 'mailto:ScrapNSFW@gmail.com'
+      + '?subject=' + encodeURIComponent('[SCRAP] Comisión — ' + (data.get('nombre') || ''))
+      + '&body='    + encodeURIComponent(body);
 
     btn.textContent = currentLang === 'es' ? 'ENVIADO ✓' : 'SENT ✓';
     btn.style.background = '#1e4d1e';
-    success.style.display = 'block';
   }
 </script>
 </body>
