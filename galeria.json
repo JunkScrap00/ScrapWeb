@@ -223,5 +223,32 @@
       "colored"
     ],
     "nsfw": false
+  },
+  {
+    "archivo": "Annerose Vajra .png",
+    "titulo": "Annerose Vajra",
+    "tags": [
+      "lineart",
+      "detailed-colored"
+    ],
+    "nsfw": false
+  },
+  {
+    "archivo": "Inage Natsu.png",
+    "titulo": "Inage Natsu",
+    "tags": [
+      "lineart",
+      "detailed-colored"
+    ],
+    "nsfw": false
+  },
+  {
+    "archivo": "Inage Natsu Young.png",
+    "titulo": "Inage Natsu Young",
+    "tags": [
+      "lineart",
+      "detailed-colored"
+    ],
+    "nsfw": false
   }
 ]
