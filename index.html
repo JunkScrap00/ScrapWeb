@@ -234,10 +234,10 @@
   <div class="container section-pad">
     <p class="section-label" data-es="Identidad" data-en="Identity">Identidad</p>
     <h2 class="section-title" data-es="QUÉ ES<br>SCRAP" data-en="WHAT IS<br>SCRAP">QUÉ ES<br>SCRAP</h2>
-    <div class="about-text" style="max-width:640px;">
-      <p id="txt-desc1" data-es="SCRAP es un espacio de ilustraciones originales sin filtros. Personajes propios, narrativa con capas y contenido adulto que va más allá del fanservice vacío." data-en="SCRAP is a space for original, unfiltered illustrations. Original characters, layered storytelling, and adult content that goes beyond empty fanservice.">SCRAP es un espacio de ilustraciones originales sin filtros. Personajes propios, narrativa con capas y contenido adulto que va más allá del fanservice vacío.</p>
-      <p id="txt-desc2" data-es="Cada pieza forma parte de un universo propio en construcción — hasta el contenido más explícito tiene coherencia interna y peso emocional." data-en="Every piece is part of an original universe in progress — even the most explicit content carries internal logic and emotional weight.">Cada pieza forma parte de un universo propio en construcción — hasta el contenido más explícito tiene coherencia interna y peso emocional.</p>
-      <p id="txt-desc3" data-es="Este es mi sitio libre. Sin políticas de terceros, sin censura de red social." data-en="This is my free space. No third-party policies, no social media censorship.">Este es mi sitio libre. Sin políticas de terceros, sin censura de red social.</p>
+    <div class="about-text" style="max-width:640px;" id="txt-about-block">
+      <p id="txt-desc1">SCRAP es un espacio de ilustraciones originales sin filtros. Personajes propios, narrativa con capas y contenido adulto que va más allá del fanservice vacío.</p>
+      <p id="txt-desc2">Cada pieza forma parte de un universo propio en construcción — hasta el contenido más explícito tiene coherencia interna y peso emocional.</p>
+      <p id="txt-desc3">Este es mi sitio libre. Sin políticas de terceros, sin censura de red social.</p>
     </div>
     <div class="about-tags" style="margin-bottom:3rem;">
       <span class="tag">OC / Original</span>
@@ -462,9 +462,16 @@ async function loadTexts(){
       const val=currentLang==='es'?t[keyEs]:t[keyEn];
       if(val) el.innerHTML=val;
     };
-    apply('txt-desc1','desc1_es','desc1_en');
-    apply('txt-desc2','desc2_es','desc2_en');
-    apply('txt-desc3','desc3_es','desc3_en');
+    // Apply description paragraphs — hide empty ones
+    const applyDesc = (id, keyEs, keyEn) => {
+      const el = document.getElementById(id); if(!el) return;
+      const val = currentLang==='es' ? t[keyEs] : t[keyEn];
+      if(val && val.trim()) { el.textContent = val; el.style.display = ''; }
+      else { el.style.display = 'none'; }
+    };
+    applyDesc('txt-desc1','desc1_es','desc1_en');
+    applyDesc('txt-desc2','desc2_es','desc2_en');
+    applyDesc('txt-desc3','desc3_es','desc3_en');
     apply('txt-status','status_es','status_en');
     apply('txt-tagline','tagline_es','tagline_en');
     apply('txt-footer-copy','footer_copy_es','footer_copy_en');
