@@ -250,5 +250,23 @@
       "detailed-colored"
     ],
     "nsfw": false
+  },
+  {
+    "archivo": "Janice.png",
+    "titulo": "Janice",
+    "tags": [
+      "sketch",
+      "colored"
+    ],
+    "nsfw": true
+  },
+  {
+    "archivo": "Oni Sisters G.png",
+    "titulo": "Oni Sisters G",
+    "tags": [
+      "lineart",
+      "detailed-colored"
+    ],
+    "nsfw": true
   }
 ]
