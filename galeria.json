@@ -216,15 +216,6 @@
     "nsfw": true
   },
   {
-    "archivo": "Cowgirl Sue Flat.png",
-    "titulo": "Cowgirl Sue Flat",
-    "tags": [
-      "lineart",
-      "colored"
-    ],
-    "nsfw": false
-  },
-  {
     "archivo": "Annerose Vajra .png",
     "titulo": "Annerose Vajra",
     "tags": [
@@ -286,5 +277,14 @@
       "detailed-colored"
     ],
     "nsfw": true
+  },
+  {
+    "archivo": "Cowgirl Sue.png",
+    "titulo": "Cowgirl Sue",
+    "tags": [
+      "lineart",
+      "detailed-colored"
+    ],
+    "nsfw": false
   }
 ]
